@@ -1,0 +1,150 @@
+@charset "UTF-8";
+html {
+  font-size: 62.5%; /* équivalence "10px" sur l'élément racine */
+}
+
+body {
+  font-size: 1.6rem; /* taille de base pour tous les éléments équivalent 14px */
+  margin: 0;
+  font-family: "Assistant", sans-serif;
+}
+
+h1, h2 {
+  font-family: "Alegreya", sans-serif;
+}
+
+h2 {
+  font-size: 5rem;
+}
+
+strong {
+  font-weight: bold;
+}
+
+.navbar ul li {
+  font-size: 1.6rem;
+}
+.navbar ul li a {
+  font-size: 1.6rem;
+}
+
+footer {
+  height: 200px;
+  background-color: rgb(26, 26, 26);
+  color: white;
+}
+
+#reseaux {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+}
+#reseaux i {
+  margin: 15px;
+  font-size: 35px;
+}
+
+#copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  margin-top: 30px;
+  height: 110vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.352), rgba(0, 0, 0, 0.721)), url("../photos/1.PNG");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+}
+header h1, header h3 {
+  color: rgba(255, 255, 255, 0.774);
+}
+header h1 {
+  font-size: 6rem;
+}
+header h3 {
+  font-size: 3rem;
+  margin-bottom: 100px;
+}
+
+#header {
+  margin-left: 100px;
+  width: 700px;
+}
+
+#presentation {
+  margin: 100px;
+}
+#presentation h2 {
+  font-size: 5rem;
+}
+
+.carousel-caption button {
+  font-size: 2rem;
+}
+
+#presentation2 {
+  margin: 100px;
+  text-align: right;
+}
+#presentation2 h2 {
+  font-size: 5rem;
+}
+
+#liens {
+  margin-bottom: 100px;
+}
+#liens h4 {
+  font-size: 4rem;
+}
+
+#lien-agenda, #lien-contact, #lien-cours {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 500px;
+}
+#lien-agenda button, #lien-contact button, #lien-cours button {
+  font-size: 1.6rem;
+  margin: 20px;
+  padding: 15px;
+}
+
+#lien-agenda {
+  background: linear-gradient(rgba(0, 0, 0, 0.479), rgba(0, 0, 0, 0.484)), url("../images/cornemuse1.jpg");
+}
+
+#lien-cours {
+  background: linear-gradient(rgba(0, 0, 0, 0.479), rgba(0, 0, 0, 0.484)), url("../images/partition.jpg");
+}
+
+#lien-cours, #lien-agenda {
+  background-position: center;
+  background-size: cover;
+}
+#lien-cours h4, #lien-agenda h4 {
+  color: white;
+}
+
+#lien-contact {
+  background-color: rgb(254, 195, 0);
+}
+
+#ecole-presentation {
+  margin: 100px;
+}
+
+#vie-associative {
+  margin: 100px;
+}
+
+#cours-repetitions {
+  margin: 100px;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,186 @@
+@import 'variables';
+
+html {
+    font-size: 62.5%; /* équivalence "10px" sur l'élément racine */
+}
+
+body {
+    font-size: 1.6rem; /* taille de base pour tous les éléments équivalent 14px */
+    margin : 0;
+    font-family: 'Assistant', sans-serif;
+}
+
+h1, h2 {
+    font-family: 'Alegreya', sans-serif;
+}
+
+h2 {
+    font-size: 5rem;
+}
+
+strong {
+    font-weight: bold;
+}
+
+
+// NAVBAR --------------------------------------------------------------------------
+.navbar {
+    ul {
+        li {
+            font-size : 1.6rem;
+            // font-family: 'Dosis';
+            a {
+                font-size : 1.6rem;
+            }
+        }
+    }
+}
+// FOOTER -------------------------------------------------------------------
+
+footer {
+    height : 200px;
+    background-color: $couleurNoire;
+    color: white;
+}
+
+#reseaux {
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    i {
+        margin : 15px;
+        font-size: 35px;
+    }
+}
+
+#copyright {
+    display : flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+// ACCUEIL------------------------------------------------------------------------
+//---------------------------------------------------------------------------------
+
+//HEADER -----------------------------------------------------------------------------
+header {
+    margin-top : 30px;
+    height : 110vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.352), rgba(0, 0, 0, 0.721)), url('../photos/1.PNG');
+    background-position: center;
+    background-size: cover;
+    display :flex;
+    align-items : flex-end;
+
+    h1, h3 {
+        color: rgba(255, 255, 255, 0.774);
+    }
+    h1 {
+        font-size: 6rem;
+    }
+    h3 {
+        font-size: 3rem;
+        margin-bottom : 100px;
+    }
+}
+
+#header {
+    margin-left : 100px;
+    width : 700px;
+}
+
+// SECTION PRESENTATION ------------------------------------------------------------------
+#presentation {
+    margin : 100px;
+    h2 {
+        font-size: 5rem;
+    }
+}
+
+// CAROUSEL -----------------------------------------------------------------------------
+.carousel-caption button {
+    font-size: 2rem;
+}
+
+// SECTION PRESENTATION 2 -----------------------------------------------------------------
+#presentation2 {
+    margin : 100px;
+    text-align: right;
+    h2 {
+        font-size: 5rem;
+    }
+}
+
+// SECTION LIENS -------------------------------------------------------------------------
+#liens {
+    h4 {
+        font-size: 4rem;
+    }
+    margin-bottom : 100px;
+}
+
+#lien-agenda, #lien-contact, #lien-cours {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height : 500px;
+    button {
+        font-size: 1.6rem;
+        margin : 20px;
+        padding: 15px;
+    }
+    
+}
+
+#lien-agenda {
+    background : linear-gradient(rgba(0, 0, 0, 0.479), rgba(0, 0, 0, 0.484)), url('../images/cornemuse1.jpg');
+
+}
+
+#lien-cours {
+    background : linear-gradient(rgba(0, 0, 0, 0.479), rgba(0, 0, 0, 0.484)), url('../images/partition.jpg');
+    
+}
+
+#lien-cours, #lien-agenda {
+    background-position: center;
+    background-size: cover;
+    h4 {
+        color : white;
+    }
+}
+
+#lien-contact{
+    background-color: $jaune;
+}
+
+
+//
+// ECOLE DE MUSIQUE - PRESENTATION--------------------------------------------------------
+//-----------------------------------------------------------------------------------------
+
+#ecole-presentation {
+    margin : 100px;
+    
+}
+
+
+//
+// VIE ASSOCIATIVE -----------------------------------------------------------------------
+//---------------------------------------------------------------------------------------
+#vie-associative {
+    margin : 100px;
+}
+
+//
+// COURS ET REPETITIONS -------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
+
+#cours-repetitions {
+    margin : 100px;
+}
