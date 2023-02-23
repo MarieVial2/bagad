@@ -1,0 +1,53 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}DemandePrestation index{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h4>DemandePrestation index</h4>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>NomPrestation</th>
+                <th>DatePrestation</th>
+                <th>HeureDebutPrestation</th>
+                <th>HeureFinPrestation</th>
+                <th>TypePrestation</th>
+                <th>InformationsPrestation</th>
+                <th>NbMinimumSonneursPrestation</th>
+                <th>EmailDemandeurPrestation</th>
+                <th>TelephoneDemandeurPrestation</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for demande_prestation in demande_prestations %}
+            <tr>
+                <td>{{ demande_prestation.id }}</td>
+                <td>{{ demande_prestation.nomPrestation }}</td>
+                <td>{{ demande_prestation.datePrestation ? demande_prestation.datePrestation|date('Y-m-d') : '' }}</td>
+                <td>{{ demande_prestation.heureDebutPrestation }}</td>
+                <td>{{ demande_prestation.heureFinPrestation }}</td>
+                <td>{{ demande_prestation.typePrestation }}</td>
+                <td>{{ demande_prestation.informationsPrestation }}</td>
+                <td>{{ demande_prestation.nbMinimumSonneursPrestation }}</td>
+                <td>{{ demande_prestation.emailDemandeurPrestation }}</td>
+                <td>{{ demande_prestation.telephoneDemandeurPrestation }}</td>
+                <td>
+                    <a href="{{ path('app_demande_prestation_show', {'id': demande_prestation.id}) }}">show</a>
+                    <a href="{{ path('app_demande_prestation_edit', {'id': demande_prestation.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_demande_prestation_new') }}">Create new</a>
+</div>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Cours index{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h4>Cours index</h4>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>InstrumentCours</th>
+                <th>JourCours</th>
+                <th>HeureDebutCours</th>
+                <th>HeureFinCours</th>
+                <th>LieuCours</th>
+                <th>PublicCours</th>
+                <th>VilleCours</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for cour in cours %}
+            <tr>
+                <td>{{ cour.id }}</td>
+                <td>{{ cour.instrumentCours }}</td>
+                <td>{{ cour.jourCours }}</td>
+                <td>{{ cour.heureDebutCours }}</td>
+                <td>{{ cour.heureFinCours }}</td>
+                <td>{{ cour.lieuCours }}</td>
+                <td>{{ cour.publicCours }}</td>
+                <td>{{ cour.villeCours }}</td>
+                <td>
+                    <a href="{{ path('app_cours_show', {'id': cour.id}) }}">show</a>
+                    <a href="{{ path('app_cours_edit', {'id': cour.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_cours_new') }}">Create new</a>
+</div>
+{% endblock %}

@@ -1,1 +1,44 @@
-/*# sourceMappingURL=style-720.css.map */
+header {
+  background-attachment: local;
+  height: 200px;
+}
+header h1 {
+  font-size: 4rem;
+}
+header h3 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+#header {
+  margin-left: 30px;
+  width: 400px;
+}
+
+#presentation {
+  margin: 30px;
+}
+
+#presentation2 {
+  margin: 30px;
+}
+
+#presentation-photo1, #presentation-photo2, #presentation-photo3, #presentation-photo4 {
+  filter: saturate(100%) brightness(100%);
+}
+
+#ecole-presentation {
+  margin: 30px;
+}
+
+#vie-associative {
+  margin: 30px;
+}
+
+#cours-repetitions {
+  margin: 30px;
+}
+
+#photo-repetition {
+  filter: saturate(100%) brightness(100%);
+}/*# sourceMappingURL=style-720.css.map */

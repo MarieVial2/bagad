@@ -56,10 +56,10 @@ class HomeController extends AbstractController
         ]);
     }
 
-    #[Route('/bagad/vie-associative', name: 'app_vie-associative')]
+    #[Route('/vie-associative', name: 'app_vie-associative')]
     public function vieassociative(): Response
     {
-        return $this->render('bagad/vie-associative.html.twig', [
+        return $this->render('home/vie-associative.html.twig', [
             'controller_name' => 'HomeController',
         ]);
     }
@@ -76,6 +76,14 @@ class HomeController extends AbstractController
     public function demande(): Response
     {
         return $this->render('prestations/demande.html.twig', [
+            'controller_name' => 'HomeController',
+        ]);
+    }
+
+    #[Route('/admin', name: 'app_admin')]
+    public function admin(): Response
+    {
+        return $this->render('admin/index-admin.html.twig', [
             'controller_name' => 'HomeController',
         ]);
     }

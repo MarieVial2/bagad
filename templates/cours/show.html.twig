@@ -1,0 +1,52 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Cours{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h4>Cours</h4>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ cour.id }}</td>
+            </tr>
+            <tr>
+                <th>InstrumentCours</th>
+                <td>{{ cour.instrumentCours }}</td>
+            </tr>
+            <tr>
+                <th>JourCours</th>
+                <td>{{ cour.jourCours }}</td>
+            </tr>
+            <tr>
+                <th>HeureDebutCours</th>
+                <td>{{ cour.heureDebutCours }}</td>
+            </tr>
+            <tr>
+                <th>HeureFinCours</th>
+                <td>{{ cour.heureFinCours }}</td>
+            </tr>
+            <tr>
+                <th>LieuCours</th>
+                <td>{{ cour.lieuCours }}</td>
+            </tr>
+            <tr>
+                <th>PublicCours</th>
+                <td>{{ cour.publicCours }}</td>
+            </tr>
+            <tr>
+                <th>VilleCours</th>
+                <td>{{ cour.villeCours }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_cours_index') }}">back to list</a>
+
+    <a href="{{ path('app_cours_edit', {'id': cour.id}) }}">edit</a>
+
+    {{ include('cours/_delete_form.html.twig') }}
+</div>
+{% endblock %}

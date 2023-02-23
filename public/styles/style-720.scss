@@ -1,0 +1,62 @@
+// ACCUEIL------------------------------------------------------------------------
+//---------------------------------------------------------------------------------
+
+//HEADER ------------------------------------------
+header {
+    background-attachment: local;
+    height :200px;
+    h1 {
+        font-size: 4rem;
+    }
+    h3 {
+        font-size: 2rem;
+        margin-bottom : 30px;
+    }
+}
+
+#header {
+    margin-left : 30px;
+    width : 400px;
+}
+
+// SECTION PRESENTATION ------------------------------------------------------------------
+#presentation {
+    margin : 30px;
+}
+// SECTION PRESENTATION 2 -----------------------------------------------------------------
+#presentation2 {
+    margin : 30px;
+}
+
+// 
+// PRESENTATION BAGAD ----------------------------------------------
+//-----------------------------------------------------------------
+
+#presentation-photo1, #presentation-photo2, #presentation-photo3, #presentation-photo4 {
+    filter: saturate(100%) brightness(100%);
+}
+
+#ecole-presentation {
+    margin : 30px;
+    
+}
+
+
+//
+// VIE ASSOCIATIVE -----------------------------------------------------------------------
+//---------------------------------------------------------------------------------------
+#vie-associative {
+    margin : 30px;
+}
+
+
+//
+// COURS ET REPETITIONS ----------------------------------------
+//-----------------------------------------------------------------
+#cours-repetitions {
+    margin : 30px;
+}
+
+#photo-repetition {
+    filter: saturate(100%) brightness(100%);
+}

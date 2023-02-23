@@ -1,0 +1,45 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Contact index{% endblock %}
+
+{% block body %}
+    <h1>Contact index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>NomContact</th>
+                <th>PrenomContact</th>
+                <th>SujetContact</th>
+                <th>EmailContact</th>
+                <th>TelephoneContact</th>
+                <th>MessageContact</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for contact in contacts %}
+            <tr>
+                <td>{{ contact.id }}</td>
+                <td>{{ contact.nomContact }}</td>
+                <td>{{ contact.prenomContact }}</td>
+                <td>{{ contact.sujetContact }}</td>
+                <td>{{ contact.emailContact }}</td>
+                <td>{{ contact.telephoneContact }}</td>
+                <td>{{ contact.messageContact }}</td>
+                <td>
+                    <a href="{{ path('app_contact_show', {'id': contact.id}) }}">show</a>
+                    <a href="{{ path('app_contact_edit', {'id': contact.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_contact_new') }}">Create new</a>
+{% endblock %}

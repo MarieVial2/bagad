@@ -1,0 +1,41 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Prof{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h4>{{ prof.nomProf }} {{ prof.prenomProf }}</h4>
+
+    <table class="table">
+        <tbody>
+            
+            <tr>
+                <th>Nom</th>
+                <td>{{ prof.nomProf }}</td>
+            </tr>
+            <tr>
+                <th>Prénom</th>
+                <td>{{ prof.prenomProf }}</td>
+            </tr>
+            <tr>
+                <th>Pupitre</th>
+                <td>{{ prof.pupitreProf }}</td>
+            </tr>
+            <tr>
+                <th>Experiences/description</th>
+                <td>{{ prof.experienceProf }}</td>
+            </tr>
+            <tr>
+                <th>Photo</th>
+                <td>{{ asset('uploads/images/' ~ prof.photoProf) }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="show-buttons">
+    <a href="{{ path('app_prof_edit', {'id': prof.id}) }}"><button type="button" class="btn btn-success">Editer</button></a>
+    {{ include('prof/_delete_form.html.twig') }}
+    </div>
+    
+</div>
+{% endblock %}

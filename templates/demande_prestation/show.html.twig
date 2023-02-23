@@ -1,0 +1,60 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}DemandePrestation{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h4>DemandePrestation</h4>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ demande_prestation.id }}</td>
+            </tr>
+            <tr>
+                <th>NomPrestation</th>
+                <td>{{ demande_prestation.nomPrestation }}</td>
+            </tr>
+            <tr>
+                <th>DatePrestation</th>
+                <td>{{ demande_prestation.datePrestation ? demande_prestation.datePrestation|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>HeureDebutPrestation</th>
+                <td>{{ demande_prestation.heureDebutPrestation }}</td>
+            </tr>
+            <tr>
+                <th>HeureFinPrestation</th>
+                <td>{{ demande_prestation.heureFinPrestation }}</td>
+            </tr>
+            <tr>
+                <th>TypePrestation</th>
+                <td>{{ demande_prestation.typePrestation }}</td>
+            </tr>
+            <tr>
+                <th>InformationsPrestation</th>
+                <td>{{ demande_prestation.informationsPrestation }}</td>
+            </tr>
+            <tr>
+                <th>NbMinimumSonneursPrestation</th>
+                <td>{{ demande_prestation.nbMinimumSonneursPrestation }}</td>
+            </tr>
+            <tr>
+                <th>EmailDemandeurPrestation</th>
+                <td>{{ demande_prestation.emailDemandeurPrestation }}</td>
+            </tr>
+            <tr>
+                <th>TelephoneDemandeurPrestation</th>
+                <td>{{ demande_prestation.telephoneDemandeurPrestation }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_demande_prestation_index') }}">back to list</a>
+
+    <a href="{{ path('app_demande_prestation_edit', {'id': demande_prestation.id}) }}">edit</a>
+
+    {{ include('demande_prestation/_delete_form.html.twig') }}
+</div>
+{% endblock %}
