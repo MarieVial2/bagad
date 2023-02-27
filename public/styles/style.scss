@@ -236,6 +236,48 @@ header {
     margin: 100px;
 }
 
+#img-repas-noel {
+    height: 300px;
+    width: 550px;
+
+    background-image: url('../photos/repas.jpg');
+    background-position: center;
+    background-size: cover;
+    filter: saturate(25%) brightness(50%);
+    transition: all .5s;
+    ;
+}
+
+#img-repas-noel:hover {
+    filter: saturate(100%) brightness(100%);
+    transform: scale(1.1);
+}
+
+.centrer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+}
+
+#img-pot {
+    height: 300px;
+    width: 550px;
+
+    background-image: url('../photos/pot.jpg');
+    background-position: center;
+    background-size: cover;
+    filter: saturate(25%) brightness(50%);
+    transition: all .5s;
+    ;
+}
+
+#img-pot:hover {
+    filter: saturate(100%) brightness(100%);
+    transform: scale(1.1);
+}
+
 //
 // COURS ET REPETITIONS -------------------------------------------------------------------
 // ---------------------------------------------------------------------------------------
@@ -280,6 +322,10 @@ header {
 #formulaire-contact {
     margin: 100px;
 }
+
+//
+//INFORMATIONS BAGAD------------------------------------------------------------
+//-------------------------------------------------------------------------------
 
 //--------------------------------------------------------------------------------
 // BASEADMIN ----------------------------------------------------------------------
@@ -368,14 +414,18 @@ table th {
     height: 0;
 }
 
+#col-2 {
+    width: 100%;
+}
+
 // PROFS ----------------------------------------------------------------------------------------
-.card img {
+.card-prof img {
     height: 300px;
     width: 300px;
     text-align: center;
 }
 
-.card {
+.card-prof {
     width: 350px;
     margin: 20px;
 }
@@ -393,6 +443,7 @@ table th {
     flex-wrap: wrap;
     // justify-content: center;
     width: 95%;
+    justify-content: center;
 }
 
 .card-img {
@@ -405,13 +456,17 @@ table th {
     margin: 30px 0;
 }
 
-#login-form {
+.login-form {
     margin: 30px;
 
     button {
         margin-top: 20px;
     }
 }
+
+// footer .nav-link {
+//     display: none;
+// }
 
 // FORMS ----------------------------------------------------------------------------
 

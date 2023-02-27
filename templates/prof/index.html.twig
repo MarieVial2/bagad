@@ -3,48 +3,48 @@
 {% block title %}Professeurs de l'école de musique{% endblock %}
 
 {% block body %}
-<!-- <div class="container"> -->
-<h4>Professeurs de l'école de musique</h4>
-<div class="nouveau">
-    <a href="{{ path('app_prof_new') }}">
-        <button type="button" class="btn btn-primary">Nouveau</button>
-    </a>
-</div>
-<div class="cards-wrap">
-    {% for prof in profs %}
-
-    <div class="card mb-3">
-        <h3 class="card-header">{{ prof.nomProf }} {{ prof.prenomProf }}</h3>
-        <div class="card-body">
-            <h5 class="card-title">{{ prof.pupitreProf }}</h5>
-
-        </div>
-        <div class="card-img">
-            <img src="{{ asset('uploads/images/' ~ prof.photoProf) }}" alt="photo {{ prof.prenomProf }}">
-        </div>
-        <div class="card-body">
-            <p class="card-text">Expérience : {{ prof.experienceProf }}</p>
-        </div>
-
-        <div class="card-body d-flex">
-            <a href="{{ path('app_prof_show', {'id': prof.id}) }}">
-                <button type="button" class="btn btn-warning">Voir</button>
-            </a>
-            <a href="{{ path('app_prof_edit', {'id': prof.id}) }}">
-                <button type="button" class="btn btn-success">Editer</button>
-            </a>
-            {{ include('prof/_delete_form.html.twig') }}
-        </div>
+<div class="container">
+    <h4>Professeurs de l'école de musique</h4>
+    <div class="nouveau">
+        <a href="{{ path('app_prof_new') }}">
+            <button type="button" class="btn btn-primary">Nouveau</button>
+        </a>
     </div>
+    <div class="cards-wrap">
+        {% for prof in profs %}
+
+        <div class="card card-prof mb-3">
+            <h3 class="card-header">{{ prof.nomProf }} {{ prof.prenomProf }}</h3>
+            <div class="card-body">
+                <h5 class="card-title">{{ prof.pupitreProf }}</h5>
+
+            </div>
+            <div class="card-img">
+                <img src="{{ asset('uploads/images/' ~ prof.photoProf) }}" alt="photo {{ prof.prenomProf }}">
+            </div>
+            <div class="card-body">
+                <p class="card-text">Expérience : {{ prof.experienceProf }}</p>
+            </div>
+
+            <div class="card-body d-flex">
+                <a href="{{ path('app_prof_show', {'id': prof.id}) }}">
+                    <button type="button" class="btn btn-warning">Voir</button>
+                </a>
+                <a href="{{ path('app_prof_edit', {'id': prof.id}) }}">
+                    <button type="button" class="btn btn-success">Editer</button>
+                </a>
+                {{ include('prof/_delete_form.html.twig') }}
+            </div>
+        </div>
 
 
 
 
-    {% else %}
-    Aucun prof trouvé
+        {% else %}
+        Aucun prof trouvé
 
-    {% endfor %}
+        {% endfor %}
 
+    </div>
 </div>
-<!-- </div> -->
 {% endblock %}

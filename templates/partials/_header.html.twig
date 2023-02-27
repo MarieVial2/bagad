@@ -1,53 +1,69 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container-fluid d-flex justify-content-around">
-      <a class="navbar-brand" href="{{ path('app_home')}}">
-        <img src="{{ asset('photos/logo.png') }}" alt="Bagad Orvault" width="100" height="80">
-      </a>
-  
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarColor01">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="{{ path('app_home')}}">Accueil
-              
-            </a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Le bagad et son école de musique</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="{{ path('app_presentation')}}">Présentation</a>
-              <a class="dropdown-item" href="{{ path('app_galerie')}}">Galerie</a>
-              <a class="dropdown-item" href="{{ path('app_cours')}}">Les cours de musique</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ path('app_vie-associative')}}">La vie associative</a>
-            </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Les prestations</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="{{ path('app_agenda')}}">Agenda</a>
-              <a class="dropdown-item" href="{{ path('app_demande')}}">Demande de prestation</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ path('app_contact')}}">Contact</a>
-          </li>
-          {% if app.user %}
-          <li class="nav-item">
-            <a class="nav-link" href="{{ path('app_logout')}}"><i class="fa-solid fa-right-to-bracket"></i>
-          </li>
-          
-          
-          {% else %}
-          <li class="nav-item">
-            <a class="nav-link" href="{{ path('app_login')}}"><i class="fa-solid fa-lock"></i></a>
-          </li>
-          {% endif %}
-        </ul>
-        
-      </div>
+  <div class="container-fluid d-flex justify-content-around">
+    <a class="navbar-brand" href="{{ path('app_home')}}">
+      <img src="{{ asset('photos/logo.png') }}" alt="Bagad Orvault" width="100" height="80">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="{{ path('app_home')}}">Accueil
+
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+            aria-expanded="false">Le bagad et son école de musique</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="{{ path('app_presentation')}}">Présentation</a>
+            <a class="dropdown-item" href="{{ path('app_galerie')}}">Galerie</a>
+            <a class="dropdown-item" href="{{ path('app_cours')}}">Les cours de musique</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ path('app_vie-associative')}}">La vie associative</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+            aria-expanded="false">Les prestations</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="{{ path('app_agenda')}}">Agenda</a>
+            <a class="dropdown-item" href="{{ path('app_demande')}}">Demande de prestation</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ path('app_contact')}}">Contact</a>
+        </li>
+        <!-- Si je veux tester le role admin sur une fonctionnalité  -->
+        <!-- {# {{ if app.user.roles[0] == "ROLE_ADMIN"}} #} -->
+        {% if app.user %}
+        {# {{ dump(app.user.roles|length)}} #}
+        <!-- Les personnes membres ont 2 roles : user et adherent. Les simples inscrits ont qu'un seul role Les personnes admin ont 3 roles. On affiche donc l'item que si le nob de role est supérieur ou egal à 2-->
+        {% if app.user.roles|length >= 2 %}
+        <li class="nav-item">
+          <a class="nav-link" href="{{ path('app_infos')}}">Informations</a>
+        </li>
+
+
+        {% endif %}
+
+        {% if app.user %}
+        <li class="nav-item">
+          <a class="nav-link" href="{{ path('app_logout')}}"><i class="fa-solid fa-right-to-bracket"></i></a>
+        </li>
+
+
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="{{ path('app_login')}}"><i class="fa-solid fa-lock"></i></a>
+        </li>
+        {% endif %}
+      </ul>
+
     </div>
-  </nav>
+  </div>
+</nav>
