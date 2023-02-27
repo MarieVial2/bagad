@@ -17,32 +17,36 @@ class ProfType extends AbstractType
     {
         $builder
             ->add('nomProf',  TextType::class, [
-                'label' => 'Nom',])
+                'label' => 'Nom',
+            ])
             ->add('prenomProf',  TextType::class, [
-                'label' => 'Prénom',])
+                'label' => 'Prénom',
+            ])
             ->add('pupitreProf',  TextType::class, [
-                'label' => 'Instrument enseigné',])
+                'label' => 'Instrument enseigné',
+            ])
             ->add('experienceProf',  TextareaType::class, [
-                'label' => 'Expériences/description',])
+                'label' => 'Expériences/description',
+            ])
             ->add('photoProf', FileType::class, [
                 'label' => 'Photo',
                 // En le laissant optionnel, nous n'avons pas à ré-ajouter notre image à chaque fois que
-                
+
                 // nous éditons notre Article
                 'required' => false,
                 'data_class' => null,
                 'constraints' => [
-                new File([
-                'maxSize' => '1024k',
-                'mimeTypes' => [
-                'image/png',
-                'image/jpeg',
+                    new File([
+                        'maxSize' => '1024k',
+                        'mimeTypes' => [
+                            'image/png',
+                            'image/jpeg',
+                            'image/jpg',
+                        ],
+                        'mimeTypesMessage' => 'Format invalide',
+                    ])
                 ],
-                'mimeTypesMessage' => 'Format invalide',
-                ])
-                ],
-                ]) 
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

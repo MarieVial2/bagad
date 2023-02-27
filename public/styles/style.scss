@@ -6,11 +6,12 @@
 
 body {
     // font-size: 1.6rem; /* taille de base pour tous les éléments équivalent 14px */
-    margin : 0;
+    margin: 0;
     font-family: 'Assistant', sans-serif;
 }
 
-h1, h2 {
+h1,
+h2 {
     font-family: 'Alegreya', sans-serif;
 }
 
@@ -27,39 +28,43 @@ strong {
 .navbar {
     ul {
         li {
-            font-size : 1rem;
+            font-size: 1rem;
+
             // font-family: 'Dosis';
             a {
-                font-size : 1rem;
+                font-size: 1rem;
             }
         }
     }
 }
+
 // FOOTER -------------------------------------------------------------------
 
 footer {
-    height : 200px;
+    height: 200px;
     background-color: $couleurNoire;
     color: white;
 }
 
 #reseaux {
-    display : flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 150px;
+
     i {
-        margin : 15px;
+        margin: 15px;
         font-size: 35px;
     }
+
     a {
         color: white;
     }
 }
 
 #copyright {
-    display : flex;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -70,36 +75,40 @@ footer {
 
 //HEADER -----------------------------------------------------------------------------
 header {
-    margin-top : 30px;
-    height : 110vh;
+    margin-top: 30px;
+    height: 110vh;
     background: linear-gradient(rgba(0, 0, 0, 0.352), rgba(0, 0, 0, 0.721)), url('../photos/1.PNG');
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
-  background-repeat: no-repeat;
-    display :flex;
-    align-items : flex-end;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-end;
 
-    h1, h3 {
+    h1,
+    h3 {
         color: rgba(255, 255, 255, 0.774);
     }
+
     h1 {
         font-size: 5rem;
     }
+
     h3 {
         font-size: 2rem;
-        margin-bottom : 100px;
+        margin-bottom: 100px;
     }
 }
 
 #header {
-    margin-left : 100px;
-    width : 700px;
+    margin-left: 100px;
+    width: 700px;
 }
 
 // SECTION PRESENTATION ------------------------------------------------------------------
 #presentation {
-    margin : 100px;
+    margin: 100px;
+
     h2 {
         font-size: 3rem;
     }
@@ -121,17 +130,24 @@ header {
     background-image: url('../photos/Cornemuse.PNG');
 }
 
-#presentation-photo1, #presentation-photo2, #presentation-photo3, #presentation-photo4 {
-    height : 300px;
-    width : 200 px;
+#presentation-photo1,
+#presentation-photo2,
+#presentation-photo3,
+#presentation-photo4 {
+    height: 300px;
+    width: 200 px;
     background-position: center;
     background-size: cover;
-    margin-top : 20px;
+    margin-top: 20px;
     filter: saturate(25%) brightness(50%);
-    transition: all .5s;;
+    transition: all .5s;
+    ;
 }
 
-#presentation-photo1:hover, #presentation-photo2:hover, #presentation-photo3:hover, #presentation-photo4:hover {
+#presentation-photo1:hover,
+#presentation-photo2:hover,
+#presentation-photo3:hover,
+#presentation-photo4:hover {
     transform: scale(1.1);
     filter: saturate(100%) brightness(100%);
 }
@@ -143,8 +159,9 @@ header {
 
 // SECTION PRESENTATION 2 -----------------------------------------------------------------
 #presentation2 {
-    margin : 100px;
+    margin: 100px;
     text-align: right;
+
     h2 {
         font-size: 3rem;
     }
@@ -155,43 +172,49 @@ header {
     h4 {
         font-size: 2rem;
     }
+
     margin-bottom : 100px;
 }
 
-#lien-agenda, #lien-contact, #lien-cours {
+#lien-agenda,
+#lien-contact,
+#lien-cours {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    height : 500px;
+    height: 500px;
+
     button {
         font-size: 1.1rem;
-        margin : 20px;
+        margin: 20px;
         padding: 15px;
     }
-    
+
 }
 
 #lien-agenda {
-    background : linear-gradient(rgba(0, 0, 0, 0.479), rgba(0, 0, 0, 0.484)), url('../images/cornemuse1.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.479), rgba(0, 0, 0, 0.484)), url('../images/cornemuse1.jpg');
 
 }
 
 #lien-cours {
-    background : linear-gradient(rgba(0, 0, 0, 0.479), rgba(0, 0, 0, 0.484)), url('../images/partition.jpg');
-    
+    background: linear-gradient(rgba(0, 0, 0, 0.479), rgba(0, 0, 0, 0.484)), url('../images/partition.jpg');
+
 }
 
-#lien-cours, #lien-agenda {
+#lien-cours,
+#lien-agenda {
     background-position: center;
     background-size: cover;
+
     h4 {
-        color : white;
+        color: white;
     }
 }
 
-#lien-contact{
+#lien-contact {
     background-color: $jaune;
 }
 
@@ -201,8 +224,8 @@ header {
 //-----------------------------------------------------------------------------------------
 
 #ecole-presentation {
-    margin : 100px;
-    
+    margin: 100px;
+
 }
 
 
@@ -210,7 +233,7 @@ header {
 // VIE ASSOCIATIVE -----------------------------------------------------------------------
 //---------------------------------------------------------------------------------------
 #vie-associative {
-    margin : 100px;
+    margin: 100px;
 }
 
 //
@@ -218,23 +241,24 @@ header {
 // ---------------------------------------------------------------------------------------
 
 #cours-repetitions {
-    margin : 100px;
+    margin: 100px;
 }
 
 #illustration-repetition {
     display: flex;
     justify-content: center;
-    margin-top : 30px;
+    margin-top: 30px;
 }
 
 #photo-repetition {
-    height : 300px;
-    width : 550px;
+    height: 300px;
+    width: 550px;
     background-image: url('../photos/repetitions2.PNG');
     background-position: center;
     background-size: cover;
     filter: saturate(25%) brightness(50%);
-    transition: all .5s;;
+    transition: all .5s;
+    ;
 }
 
 #photo-repetition:hover {
@@ -242,7 +266,20 @@ header {
     transform: scale(1.1);
 }
 
+//
+// DEMANDE DE PRESTATION ----------------------------------------------------
+//--------------------------------------------------------------------------
+#formulaire-demande-prestation {
+    margin: 100px;
+}
 
+//
+// CONTACT  ----------------------------------------------------
+//--------------------------------------------------------------------------
+
+#formulaire-contact {
+    margin: 100px;
+}
 
 //--------------------------------------------------------------------------------
 // BASEADMIN ----------------------------------------------------------------------
@@ -250,53 +287,58 @@ header {
 
 h4 {
     font-size: 1.5rem;
-    margin : 20px 0;
+    margin: 20px 0;
 }
 
 table th {
-    font-size: 1rem;
+    font-size: 0.7rem;
 }
+
 #bandeau-admin {
-    height : 60px;
+    height: 60px;
     background-color: $couleurNoire;
-    color : white;
-    display : flex;
+    color: white;
+    display: flex;
     justify-content: space-around;
     align-items: center;
     font-size: 1.1rem;
+
     a {
         color: white;
         text-decoration: none;
     }
+
     a:hover {
         color: rgb(165, 165, 165);
     }
+
     i {
-        margin : 0 15px;
+        margin: 0 15px;
     }
 }
 
 #menu-admin {
-    display : flex;
-    flex-direction : column;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    height : 100%;
+    height: 100%;
     background-color: rgb(59, 59, 59);
 }
 
 .menu-item {
-    display : flex;
+    display: flex;
     padding: 0 15px;
     justify-content: space-between;
     align-items: center;
-    width : 100%;
-    height : 60px;
+    width: 100%;
+    height: 60px;
     background-color: rgb(59, 59, 59);
-    color : white;
+    color: white;
+
     a {
         font-size: 1rem;
         text-transform: uppercase;
-        color : rgb(255, 255, 255);
+        color: rgb(255, 255, 255);
         text-decoration: none;
     }
 }
@@ -314,51 +356,60 @@ table th {
 }
 
 #conteneur-admin {
-    height : 100%;
+    height: 100%;
 }
 
 #corps-admin {
-    height : 100%;
+    height: 100%;
+    width: 95%;
 }
 
 .sf-toolbar-clearer {
-    height : 0;
+    height: 0;
 }
 
 // PROFS ----------------------------------------------------------------------------------------
 .card img {
-    height : 300px;
-    width : 300px;
+    height: 300px;
+    width: 300px;
     text-align: center;
 }
 
 .card {
-    width : 350px;
-    margin : 20px;
+    width: 350px;
+    margin: 20px;
 }
 
 .card-body button {
-    margin-right : 10px;
+    margin-right: 10px;
 }
 
 .nouveau button {
-    margin : 15px 0;
+    margin: 15px 0;
 }
 
 .cards-wrap {
-    display : flex;
-    flex-wrap : wrap;
+    display: flex;
+    flex-wrap: wrap;
+    // justify-content: center;
+    width: 95%;
+}
+
+.card-img {
+    display: flex;
+    justify-content: center;
 }
 
 // LOGIN ----------------------------------------------------------------------
 .h4 {
-    margin : 30px 0;
+    margin: 30px 0;
 }
 
 #login-form {
-    margin : 30px;
+    margin: 30px;
+
     button {
-        margin-top : 20px;
+        margin-top: 20px;
     }
 }
 
@@ -366,17 +417,32 @@ table th {
 
 
 .form-button {
-    display : flex;
+    display: flex;
     justify-content: center;
+
     button {
-        margin : 20px 0;
+        margin: 20px 0;
     }
 }
 
-.show-buttons {
-    display : flex;
+// BOUTONS ---------------------------------------------------------------------------
+.groupe-boutons {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+
     button {
-        margin : 0 20px;
+        margin: 5px;
+    }
+}
+
+
+.show-buttons {
+    display: flex;
+    justify-content: center;
+
+    button {
+        margin: 0 20px;
     }
 }

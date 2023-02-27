@@ -3,7 +3,8 @@ body {
   font-family: "Assistant", sans-serif;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: "Alegreya", sans-serif;
 }
 
@@ -60,7 +61,8 @@ header {
   display: flex;
   align-items: flex-end;
 }
-header h1, header h3 {
+header h1,
+header h3 {
   color: rgba(255, 255, 255, 0.774);
 }
 header h1 {
@@ -99,7 +101,10 @@ header h3 {
   background-image: url("../photos/Cornemuse.PNG");
 }
 
-#presentation-photo1, #presentation-photo2, #presentation-photo3, #presentation-photo4 {
+#presentation-photo1,
+#presentation-photo2,
+#presentation-photo3,
+#presentation-photo4 {
   height: 300px;
   width: 200 px;
   background-position: center;
@@ -109,7 +114,10 @@ header h3 {
   transition: all 0.5s;
 }
 
-#presentation-photo1:hover, #presentation-photo2:hover, #presentation-photo3:hover, #presentation-photo4:hover {
+#presentation-photo1:hover,
+#presentation-photo2:hover,
+#presentation-photo3:hover,
+#presentation-photo4:hover {
   transform: scale(1.1);
   filter: saturate(100%) brightness(100%);
 }
@@ -133,7 +141,9 @@ header h3 {
   font-size: 2rem;
 }
 
-#lien-agenda, #lien-contact, #lien-cours {
+#lien-agenda,
+#lien-contact,
+#lien-cours {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -141,7 +151,9 @@ header h3 {
   text-align: center;
   height: 500px;
 }
-#lien-agenda button, #lien-contact button, #lien-cours button {
+#lien-agenda button,
+#lien-contact button,
+#lien-cours button {
   font-size: 1.1rem;
   margin: 20px;
   padding: 15px;
@@ -155,11 +167,13 @@ header h3 {
   background: linear-gradient(rgba(0, 0, 0, 0.479), rgba(0, 0, 0, 0.484)), url("../images/partition.jpg");
 }
 
-#lien-cours, #lien-agenda {
+#lien-cours,
+#lien-agenda {
   background-position: center;
   background-size: cover;
 }
-#lien-cours h4, #lien-agenda h4 {
+#lien-cours h4,
+#lien-agenda h4 {
   color: white;
 }
 
@@ -200,13 +214,21 @@ header h3 {
   transform: scale(1.1);
 }
 
+#formulaire-demande-prestation {
+  margin: 100px;
+}
+
+#formulaire-contact {
+  margin: 100px;
+}
+
 h4 {
   font-size: 1.5rem;
   margin: 20px 0;
 }
 
 table th {
-  font-size: 1rem;
+  font-size: 0.7rem;
 }
 
 #bandeau-admin {
@@ -268,6 +290,7 @@ table th {
 
 #corps-admin {
   height: 100%;
+  width: 95%;
 }
 
 .sf-toolbar-clearer {
@@ -296,6 +319,12 @@ table th {
 .cards-wrap {
   display: flex;
   flex-wrap: wrap;
+  width: 95%;
+}
+
+.card-img {
+  display: flex;
+  justify-content: center;
 }
 
 .h4 {
@@ -315,6 +344,16 @@ table th {
 }
 .form-button button {
   margin: 20px 0;
+}
+
+.groupe-boutons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.groupe-boutons button {
+  margin: 5px;
 }
 
 .show-buttons {

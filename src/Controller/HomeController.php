@@ -2,9 +2,16 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\Contact;
+use App\Form\ContactType;
+use App\Entity\DemandePrestation;
+use App\Form\DemandePrestationType;
+use App\Repository\ContactRepository;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use App\Repository\DemandePrestationRepository;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class HomeController extends AbstractController
 {
@@ -17,11 +24,26 @@ class HomeController extends AbstractController
     }
 
     #[Route('/contact', name: 'app_contact')]
-    public function contact(): Response
+    public function contact(Request $request, ContactRepository $contactRepository): Response
     {
-        return $this->render('home/contact.html.twig', [
-            'controller_name' => 'HomeController',
+        $contact = new Contact();
+        $form = $this->createForm(ContactType::class, $contact);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $contactRepository->save($contact, true);
+            $this->addFlash('success', 'Votre message a bien été envoyé !');
+
+            return $this->redirectToRoute('app_contact', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('home/contact.html.twig', [
+            'contact' => $contact,
+            'form' => $form,
         ]);
+        // return $this->render('home/contact.html.twig', [
+        //     'controller_name' => 'HomeController',
+        // ]);
     }
 
     #[Route('/informations-bagad', name: 'app_infos')]
@@ -73,12 +95,36 @@ class HomeController extends AbstractController
     }
 
     #[Route('/prestations/demande', name: 'app_demande')]
-    public function demande(): Response
+    public function demande(Request $request, DemandePrestationRepository $demandePrestationRepository): Response
     {
+        $demandePrestation = new DemandePrestation();
+        $form = $this->createForm(DemandePrestationType::class, $demandePrestation);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $demandePrestationRepository->save($demandePrestation, true);
+
+            $this->addFlash('success', 'Votre message a bien été envoyé !');
+
+            return $this->redirectToRoute('app_demande', [
+                'showBandeau' => true
+            ], Response::HTTP_SEE_OTHER);
+        }
         return $this->render('prestations/demande.html.twig', [
             'controller_name' => 'HomeController',
+            'form' => $form,
+            'showBandeau' => false
         ]);
     }
+
+    // #[Route('/prestation/demande/validation', name: 'app_admin')]
+    // public function prestation_validation(): Response
+    // {
+    //     return $this->render('admin/index-admin.html.twig', [
+    //         'controller_name' => 'HomeController',
+    //     ]);
+    // }
+
 
     #[Route('/admin', name: 'app_admin')]
     public function admin(): Response

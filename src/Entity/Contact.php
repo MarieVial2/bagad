@@ -32,6 +32,14 @@ class Contact
     #[ORM\Column(type: Types::TEXT)]
     private ?string $messageContact = null;
 
+    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    private ?\DateTimeInterface $dateCreationContact = null;
+
+    public function __construct()
+    {
+        $this->setDateCreationContact(new \DateTimeImmutable);
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -105,6 +113,19 @@ class Contact
     public function setMessageContact(string $messageContact): self
     {
         $this->messageContact = $messageContact;
+
+        return $this;
+    }
+
+    public function getDateCreationContact(): ?\DateTimeInterface
+    {
+        return $this->dateCreationContact;
+    }
+
+    public function setDateCreationContact($dateCreationContact)
+    {
+        $this->dateCreationContact = $dateCreationContact;
+
 
         return $this;
     }

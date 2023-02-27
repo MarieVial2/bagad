@@ -41,7 +41,16 @@ class DemandePrestation
     #[ORM\Column(length: 14, nullable: true)]
     private ?string $telephoneDemandeurPrestation = null;
 
-    
+    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    private ?\DateTimeInterface $dateCreationPrestation = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $lieuPrestation = null;
+
+    public function __construct()
+    {
+        $this->setDateCreationPrestation(new \DateTimeImmutable);
+    }
 
     public function getId(): ?int
     {
@@ -156,9 +165,28 @@ class DemandePrestation
         return $this;
     }
 
-    
+    public function getDateCreationPrestation(): ?\DateTimeInterface
+    {
+        return $this->dateCreationPrestation;
+    }
 
-    
+    public function setDateCreationPrestation($dateCreationPrestation)
+    {
 
+        $this->dateCreationPrestation = $dateCreationPrestation;
 
+        return $this;
+    }
+
+    public function getLieuPrestation(): ?string
+    {
+        return $this->lieuPrestation;
+    }
+
+    public function setLieuPrestation(string $lieuPrestation): self
+    {
+        $this->lieuPrestation = $lieuPrestation;
+
+        return $this;
+    }
 }

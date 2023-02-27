@@ -1,6 +1,6 @@
 header {
   background-attachment: local;
-  height: 200px;
+  height: 400px;
 }
 header h1 {
   font-size: 4rem;
@@ -23,7 +23,10 @@ header h3 {
   margin: 30px;
 }
 
-#presentation-photo1, #presentation-photo2, #presentation-photo3, #presentation-photo4 {
+#presentation-photo1,
+#presentation-photo2,
+#presentation-photo3,
+#presentation-photo4 {
   filter: saturate(100%) brightness(100%);
 }
 
@@ -41,4 +44,12 @@ header h3 {
 
 #photo-repetition {
   filter: saturate(100%) brightness(100%);
+}
+
+#formulaire-demande-prestation {
+  margin: 30px;
+}
+
+#formulaire-contact {
+  margin: 30px;
 }/*# sourceMappingURL=style-720.css.map */

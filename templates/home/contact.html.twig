@@ -1,7 +1,26 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Bagad Orvez{% endblock %}
+{% block title %}Contact{% endblock %}
 
 {% block body %}
+
+<section id="formulaire-contact">
+    {% for message in app.flashes('success') %}
+    <div class="alert alert-success">
+        {{ message }}
+    </div>
+    {% endfor %}
+    <h2>Contactez-nous !</h2>
+    <p>Pour toute sollicitation relative à une prestation : <a href="{{ path('app_demande')}}">c'est plutôt par ici
+            !</a></p>
+
+    <p>Pour toute autre demande (info sur le bagad, inscription…), merci de contacter Nicolas Corlieu (Président de
+        l’association) au 06.35.59.87.13 ou en écrivant à bagadorvez44@gmail.com ou remplissez le formulaire suivant :
+    </p>
+
+    <div class="offset-md-3 col-md-6 offset-md-3">
+        {{ include('contact/_form.html.twig') }}
+    </div>
+</section>
 
 {% endblock %}

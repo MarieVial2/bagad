@@ -4,46 +4,53 @@
 
 {% block body %}
 <div class="container">
-    <h4>Cours index</h4>
+    <h4>Cours </h4>
 
-    <table class="table">
+    <div class="nouveau">
+        <a href="{{ path('app_cours_new') }}">
+            <button type="button" class="btn btn-primary">Nouveau</button>
+        </a>
+    </div>
+
+    <table class="table table-hover">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>InstrumentCours</th>
-                <th>JourCours</th>
-                <th>HeureDebutCours</th>
-                <th>HeureFinCours</th>
-                <th>LieuCours</th>
-                <th>PublicCours</th>
-                <th>VilleCours</th>
-                <th>actions</th>
+
+                <th>Instrument</th>
+                <th>Public</th>
+                <th>Jour</th>
+
+                <th></th>
             </tr>
         </thead>
         <tbody>
-        {% for cour in cours %}
+            {% for cour in cours %}
             <tr>
-                <td>{{ cour.id }}</td>
+
                 <td>{{ cour.instrumentCours }}</td>
-                <td>{{ cour.jourCours }}</td>
-                <td>{{ cour.heureDebutCours }}</td>
-                <td>{{ cour.heureFinCours }}</td>
-                <td>{{ cour.lieuCours }}</td>
                 <td>{{ cour.publicCours }}</td>
-                <td>{{ cour.villeCours }}</td>
-                <td>
-                    <a href="{{ path('app_cours_show', {'id': cour.id}) }}">show</a>
-                    <a href="{{ path('app_cours_edit', {'id': cour.id}) }}">edit</a>
+                <td>{{ cour.jourCours }}</td>
+
+                <td class="groupe-boutons">
+
+                    <a href="{{ path('app_cours_show', {'id': cour.id}) }}">
+                        <button type="button" class="btn btn-warning">Voir</button>
+                    </a>
+                    <a href="{{ path('app_cours_edit', {'id': cour.id}) }}">
+                        <button type="button" class="btn btn-success">Editer</button>
+                    </a>
+                    {{ include('cours/_delete_form.html.twig') }}
+
                 </td>
             </tr>
-        {% else %}
+            {% else %}
             <tr>
-                <td colspan="9">no records found</td>
+                <td colspan="9">Aucun cours trouvé</td>
             </tr>
-        {% endfor %}
+            {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_cours_new') }}">Create new</a>
+
 </div>
 {% endblock %}

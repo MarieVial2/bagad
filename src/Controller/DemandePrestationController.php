@@ -17,7 +17,8 @@ class DemandePrestationController extends AbstractController
     public function index(DemandePrestationRepository $demandePrestationRepository): Response
     {
         return $this->render('demande_prestation/index.html.twig', [
-            'demande_prestations' => $demandePrestationRepository->findAll(),
+            'demande_prestations' => $demandePrestationRepository->orderByDate(),
+
         ]);
     }
 
@@ -31,13 +32,13 @@ class DemandePrestationController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $demandePrestationRepository->save($demandePrestation, true);
 
-            return $this->redirectToRoute('app_demande_prestation_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_demande', ['showBandeau' => true], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('demande_prestation/new.html.twig', [
-            'demande_prestation' => $demandePrestation,
-            'form' => $form,
-        ]);
+        // return $this->renderForm('demande_prestation/new.html.twig', [
+        //     'demande_prestation' => $demandePrestation,
+        //     'form' => $form,
+        // ]);
     }
 
     #[Route('/{id}', name: 'app_demande_prestation_show', methods: ['GET'])]
@@ -69,7 +70,7 @@ class DemandePrestationController extends AbstractController
     #[Route('/{id}', name: 'app_demande_prestation_delete', methods: ['POST'])]
     public function delete(Request $request, DemandePrestation $demandePrestation, DemandePrestationRepository $demandePrestationRepository): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$demandePrestation->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $demandePrestation->getId(), $request->request->get('_token'))) {
             $demandePrestationRepository->remove($demandePrestation, true);
         }
 

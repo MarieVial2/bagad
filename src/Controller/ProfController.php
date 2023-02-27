@@ -35,29 +35,32 @@ class ProfController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $image = $form->get('photoProf')->getData();
 
-        if ($image) {
-            $originalFilename = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME);
-            // this is needed to safely include the file name as part of the URL
-            $safeFilename = $slugger->slug($originalFilename);
-            $newFilename = $safeFilename . '-' . uniqid() . '.' . $image->guessExtension();
-            // Move the file to the directory where images are stored
-            try {
-            $image->move(
-            $this->getParameter('images_directory'),
-            $newFilename
-            );
-            } catch (FileException $e) {
-            // ... handle exception if something happens during file upload
-            dd($e);
+
+
+            if ($image) {
+                $originalFilename = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME);
+                // this is needed to safely include the file name as part of the URL
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename . '-' . uniqid() . '.' . $image->guessExtension();
+                // Move the file to the directory where images are stored
+                try {
+                    $image->move(
+                        $this->getParameter('images_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // ... handle exception if something happens during file upload
+                    dd($e);
+                }
+                $prof->setPhotoProf($newFilename);
             }
-            }
-            $prof->setPhotoProf($newFilename);
+
             $profRepository->save($prof, true);
 
             return $this->redirectToRoute('app_prof_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        
+
 
         return $this->renderForm('prof/new.html.twig', [
             'prof' => $prof,
@@ -77,33 +80,44 @@ class ProfController extends AbstractController
     public function edit(Request $request, Prof $prof, ProfRepository $profRepository, SluggerInterface
     $slugger): Response
     {
-        
-    $prof->setPhotoProf(new File($this->getParameter('images_directory') . '/' . $prof->getPhotoProf())
-    );
+
+        $prof->setPhotoProf(
+            new File($this->getParameter('images_directory') . '/' . $prof->getPhotoProf())
+        );
+
+        // dd($prof->getPhotoProf());
         $form = $this->createForm(ProfType::class, $prof);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
 
             $image = $form->get('photoProf')->getData();
-if ($image) {
-$originalFilename = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME);
-// this is needed to safely include the file name as part of the URL
-$safeFilename = $slugger->slug($originalFilename);
-$newFilename = $safeFilename . '-' . uniqid() . '.' . $image->guessExtension();
-// Move the file to the directory where images are stored
-try {
-$image->move(
-$this->getParameter('images_directory'),
-$newFilename
-);
-} catch (FileException $e) {
-// ... handle exception if something happens during file upload
-dd($e);
-}
-$prof->setPhotoProf($newFilename
-);
-}
+            // dd($image);
+            if ($image != null) {
+                dd($image);
+                if ($image) {
+                    $originalFilename = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME);
+                    // this is needed to safely include the file name as part of the URL
+                    $safeFilename = $slugger->slug($originalFilename);
+                    $newFilename = $safeFilename . '-' . uniqid() . '.' . $image->guessExtension();
+                    // Move the file to the directory where images are stored
+                    try {
+                        $image->move(
+                            $this->getParameter('images_directory'),
+                            $newFilename
+                        );
+                    } catch (FileException $e) {
+                        // ... handle exception if something happens during file upload
+                        dd($e);
+                    }
+                }
+            } else {
+                dd('tata');
+                $image = $prof->getPhotoProf();
+                $prof->setPhotoProf(
+                    $image
+                );
+            }
             $profRepository->save($prof, true);
 
             return $this->redirectToRoute('app_prof_index', [], Response::HTTP_SEE_OTHER);
@@ -118,7 +132,7 @@ $prof->setPhotoProf($newFilename
     #[Route('/{id}', name: 'app_prof_delete', methods: ['POST'])]
     public function delete(Request $request, Prof $prof, ProfRepository $profRepository): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$prof->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $prof->getId(), $request->request->get('_token'))) {
             $profRepository->remove($prof, true);
         }
 

@@ -39,28 +39,25 @@ class DemandePrestationRepository extends ServiceEntityRepository
         }
     }
 
-//    /**
-//     * @return DemandePrestation[] Returns an array of DemandePrestation objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('d')
-//            ->andWhere('d.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('d.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+    //    /**
+    //     * @return DemandePrestation[] Returns an array of DemandePrestation objects
+    //     */
+    public function orderByDate(): array
+    {
+        return $this->createQueryBuilder('d')
+            ->orderBy('d.id', 'DESC')
 
-//    public function findOneBySomeField($value): ?DemandePrestation
-//    {
-//        return $this->createQueryBuilder('d')
-//            ->andWhere('d.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+            ->getQuery()
+            ->getResult();
+    }
+
+    //    public function findOneBySomeField($value): ?DemandePrestation
+    //    {
+    //        return $this->createQueryBuilder('d')
+    //            ->andWhere('d.exampleField = :val')
+    //            ->setParameter('val', $value)
+    //            ->getQuery()
+    //            ->getOneOrNullResult()
+    //        ;
+    //    }
 }

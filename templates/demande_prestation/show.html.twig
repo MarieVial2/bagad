@@ -1,59 +1,52 @@
 {% extends 'baseAdmin.html.twig' %}
 
-{% block title %}DemandePrestation{% endblock %}
+{% block title %}Demande de prestation{% endblock %}
 
 {% block body %}
 <div class="container">
-    <h4>DemandePrestation</h4>
+    <h4>{{ demande_prestation.nomPrestation }}</h4>
 
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ demande_prestation.id }}</td>
-            </tr>
-            <tr>
-                <th>NomPrestation</th>
+                <th>Nom de la prestation</th>
                 <td>{{ demande_prestation.nomPrestation }}</td>
             </tr>
             <tr>
-                <th>DatePrestation</th>
+                <th>Date voulue de la prestation</th>
                 <td>{{ demande_prestation.datePrestation ? demande_prestation.datePrestation|date('Y-m-d') : '' }}</td>
             </tr>
             <tr>
-                <th>HeureDebutPrestation</th>
+                <th>Heure de début </th>
                 <td>{{ demande_prestation.heureDebutPrestation }}</td>
             </tr>
             <tr>
-                <th>HeureFinPrestation</th>
+                <th>Heure de fin</th>
                 <td>{{ demande_prestation.heureFinPrestation }}</td>
             </tr>
             <tr>
-                <th>TypePrestation</th>
+                <th>Type de prestation</th>
                 <td>{{ demande_prestation.typePrestation }}</td>
             </tr>
             <tr>
-                <th>InformationsPrestation</th>
+                <th>Informations supplémentaires</th>
                 <td>{{ demande_prestation.informationsPrestation }}</td>
             </tr>
             <tr>
-                <th>NbMinimumSonneursPrestation</th>
+                <th>Nombre minimum de sonneurs</th>
                 <td>{{ demande_prestation.nbMinimumSonneursPrestation }}</td>
             </tr>
             <tr>
-                <th>EmailDemandeurPrestation</th>
+                <th>Email du demandeur</th>
                 <td>{{ demande_prestation.emailDemandeurPrestation }}</td>
             </tr>
             <tr>
-                <th>TelephoneDemandeurPrestation</th>
+                <th>Téléphone du demandeur</th>
                 <td>{{ demande_prestation.telephoneDemandeurPrestation }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('app_demande_prestation_index') }}">back to list</a>
-
-    <a href="{{ path('app_demande_prestation_edit', {'id': demande_prestation.id}) }}">edit</a>
 
     {{ include('demande_prestation/_delete_form.html.twig') }}
 </div>

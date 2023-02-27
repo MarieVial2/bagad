@@ -1,7 +1,35 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Bagad Orvez{% endblock %}
+{% block title %}Demande de prestation{% endblock %}
 
 {% block body %}
+<section id="formulaire-demande-prestation">
+    {% for message in app.flashes('success') %}
+    <div class="alert alert-success">
+        {{ message }}
+    </div>
+    {% endfor %}
 
+    <h2>Demande de prestation</h2>
+    <p>Conviez le Bagad d’Orvault à venir animer en statique ou en défilé vos événements (festival, mariage, animation
+        diverse…)!
+    </p>
+    <p>Pour toute demande d’information ou de devis pour une prestation, merci de remplir le formulaire suivant :
+
+    </p>
+
+    <div class="row">
+        <div class="offset-md-3 col-md-6 offset-md-3">
+
+            {{ include('demande_prestation/_form.html.twig') }}
+        </div>
+    </div>
+    <p>Ou contacts :</p>
+    <ul>
+        <li>Eric Serandour au 06.73.09.38.22</li>
+        <li>Loïck Morand au 06.14.40.81.26</li>
+        <li>Bagadorvez44@gmail.com</li>
+    </ul>
+
+</section>
 {% endblock %}
