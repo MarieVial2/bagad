@@ -34,6 +34,10 @@ header h3 {
   margin: 30px;
 }
 
+.img-prof {
+  filter: saturate(100%) brightness(100%);
+}
+
 #vie-associative {
   margin: 30px;
 }
@@ -46,10 +50,37 @@ header h3 {
   filter: saturate(100%) brightness(100%);
 }
 
+#img-cours {
+  filter: saturate(100%) brightness(100%);
+}
+
 #formulaire-demande-prestation {
   margin: 30px;
 }
 
 #formulaire-contact {
+  margin: 30px;
+}
+
+#agenda {
+  margin: 30px;
+}
+
+.img-evenement {
+  height: 170px;
+  width: 170px;
+}
+.img-evenement p {
+  font-size: 1.5rem;
+}
+
+.corps-evenement h5 {
+  font-size: 1rem;
+}
+.corps-evenement h6 {
+  font-size: 0.8rem;
+}
+
+#infos-bagad {
   margin: 30px;
 }/*# sourceMappingURL=style-720.css.map */

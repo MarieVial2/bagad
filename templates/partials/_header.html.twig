@@ -17,7 +17,7 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-            aria-expanded="false">Le bagad et son école de musique</a>
+            aria-expanded="false">Le bagad et son <br/> école de musique</a>
           <div class="dropdown-menu">
             <a class="dropdown-item" href="{{ path('app_presentation')}}">Présentation</a>
             <a class="dropdown-item" href="{{ path('app_galerie')}}">Galerie</a>
@@ -41,14 +41,26 @@
         <!-- Si je veux tester le role admin sur une fonctionnalité  -->
         <!-- {# {{ if app.user.roles[0] == "ROLE_ADMIN"}} #} -->
         {% if app.user %}
-        {# {{ dump(app.user.roles|length)}} #}
+        
         <!-- Les personnes membres ont 2 roles : user et adherent. Les simples inscrits ont qu'un seul role Les personnes admin ont 3 roles. On affiche donc l'item que si le nob de role est supérieur ou egal à 2-->
         {% if app.user.roles|length >= 2 %}
         <li class="nav-item">
-          <a class="nav-link" href="{{ path('app_infos')}}">Informations</a>
+          <a class="nav-link" href="{{ path('app_infos')}}">Espace adhérent</a>
         </li>
 
 
+        {% endif %}
+        {% endif %}
+        {% if app.user %}
+        
+        <!-- Les personnes membres ont 2 roles : user et adherent. Les simples inscrits ont qu'un seul role Les personnes admin ont 3 roles. On affiche donc l'item que si le nob de role est supérieur ou egal à 2-->
+        {% if app.user.roles|length >= 3 %}
+        <li class="nav-item">
+          <a class="nav-link" href="{{ path('app_admin')}}"><i class="fa-solid fa-key"></i></a>
+        </li>
+
+
+        {% endif %}
         {% endif %}
 
         {% if app.user %}

@@ -39,6 +39,16 @@ class EvenementRepository extends ServiceEntityRepository
         }
     }
 
+
+    public function orderByDate(): array
+    {
+        return $this->createQueryBuilder('e')
+
+            ->orderBy('e.dateEvenement', 'DESC')
+            
+            ->getQuery()
+            ->getResult();
+    }
 //    /**
 //     * @return Evenement[] Returns an array of Evenement objects
 //     */

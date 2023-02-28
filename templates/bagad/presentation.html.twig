@@ -16,7 +16,22 @@
 
     <p>La formation est assurée par des professeurs de qualité :</p>
 
+        <div class="cards-wrap">
 
+            {% for prof in profs %}
+            <div class="carte-prof">
+                <div class="img-prof" style="background: url('{{ asset('uploads/images/' ~ prof.photoProf) }}'); background-position: center;
+                background-size: cover;">
+
+                </div>
+                <div class="corps-prof">
+                    <h5>{{ prof.prenomProf }} {{ prof.nomProf }}</h5>
+                    <h6>{{ prof.pupitreProf }}</h6>
+                    <p>({{ prof.experienceProf }})</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
 
 
     <p>Le solfège :</p>

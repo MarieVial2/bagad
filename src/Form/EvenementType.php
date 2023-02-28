@@ -58,16 +58,17 @@ class EvenementType extends AbstractType
                 'label' => 'Description de l\'évènement',
                 'required' => false,
             ])
-            ->add(
-                'idUser',
-                EntityType::class,
-                [
-                    'class' => User::class,
-                    'choice_label' => 'nomUser prenomUser',
-                    'label' => 'Créateur de l\'évènement',
-                    'required' => false,
-                ]
-            );
+            // ->add(
+            //     'idUser',
+            //     EntityType::class,
+            //     [
+            //         'class' => User::class,
+            //         // 'choice_label' => 'prenomUser',
+            //         'label' => 'Créateur de l\'évènement',
+            //         'required' => false,
+            //     ]
+            // )
+            ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void

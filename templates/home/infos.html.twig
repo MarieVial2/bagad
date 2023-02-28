@@ -1,22 +1,45 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Bagad Orvez{% endblock %}
+{% block title %}Infos bagad{% endblock %}
 
 {% block body %}
-
-<div>
-    <div class="card text-white bg-warning mb-3" style="max-width: 20rem;">
-        <div class="card-header">Accès au fichier des sorties</div>
-        <div class="card-body">
-            <h4 class="card-title">Fichier des sorties</h4>
-            <p class="card-text">Retrouvez toutes les sorties sur le fichier des sorties</p>
-            <div class="centrer2">
-                <a
-                    href="https://docs.google.com/spreadsheets/d/1LFRxtarAkRYr1KkxkeflVB4Lc_Ou0Qbl6KBh8O8v_JM/edit#gid=470406929"><button
-                        type="button" class="btn btn-primary">Ici</button></a>
-            </div>
+<section id="infos-bagad">
+    <div class="container">
+        <h2>Espace adhérent</h2>
+        <p>Cher adhérent, retrouvez ici l'accès aux fichiers liés aux activités du bagad.</p>
+        <div class="row">
+            
+            
+                <div class="col-md-6">
+                    <div class="card text-white bg-warning mb-3 carte" style="max-width: 20rem;">
+                        <div class="card-header"><h4 class="card-title">Fichier des sorties</h4></div>
+                        <div class="card-body carte-centrer">
+                            
+                            <p class="card-text">Retrouvez toutes les sorties du bagad sur le fichier des sorties et manifestez votre présence ou non à ces évènements</p>
+                            <div class="centrer2">
+                                <a
+                                    href="https://docs.google.com/spreadsheets/d/1LFRxtarAkRYr1KkxkeflVB4Lc_Ou0Qbl6KBh8O8v_JM/edit#gid=470406929"><button
+                                        type="button" class="btn btn-primary">Fichier des sorties</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card text-white bg-warning mb-3 carte" style="max-width: 20rem;">
+                        <div class="card-header"><h4 class="card-title">Drive</h4></div>
+                        <div class="card-body carte-centrer">
+                            
+                            <p class="card-text">Retrouvez tous les documents du bagad sur le drive (partitions, audio...)</p>
+                            <div class="centrer2">
+                                <a
+                                    href="https://drive.google.com/drive/folders/1l2kjNE7CmHrg0UVOckwHUYJ4bi23Dooo"><button
+                                        type="button" class="btn btn-primary">Drive</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
         </div>
-    </div>
-
 </div>
+</section>
 {% endblock %}

@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Contact;
 use Symfony\Component\Form\AbstractType;
+use Gregwar\CaptchaBundle\Type\CaptchaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -34,7 +35,9 @@ class ContactType extends AbstractType
             ])
             ->add('messageContact',  TextareaType::class, [
                 'label' => 'Votre message',
-            ]);
+            ])
+            // ->add('captcha', CaptchaType::class)
+            ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void

@@ -5,8 +5,11 @@ namespace App\Controller;
 use App\Entity\Contact;
 use App\Form\ContactType;
 use App\Entity\DemandePrestation;
+use App\Repository\ProfRepository;
 use App\Form\DemandePrestationType;
+use App\Repository\CoursRepository;
 use App\Repository\ContactRepository;
+use App\Repository\EvenementRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use App\Repository\DemandePrestationRepository;
@@ -55,10 +58,11 @@ class HomeController extends AbstractController
     }
 
     #[Route('/bagad/presentation', name: 'app_presentation')]
-    public function presentation(): Response
+    public function presentation(ProfRepository $profRepository): Response
     {
         return $this->render('bagad/presentation.html.twig', [
             'controller_name' => 'HomeController',
+            'profs' => $profRepository->findAll(),
         ]);
     }
 
@@ -71,10 +75,11 @@ class HomeController extends AbstractController
     }
 
     #[Route('/bagad/cours', name: 'app_cours')]
-    public function cours(): Response
+    public function cours(CoursRepository $coursRepository): Response
     {
         return $this->render('bagad/cours.html.twig', [
             'controller_name' => 'HomeController',
+            'cours' => $coursRepository->findAll(),
         ]);
     }
 
@@ -87,10 +92,11 @@ class HomeController extends AbstractController
     }
 
     #[Route('/prestations/agenda', name: 'app_agenda')]
-    public function agenda(): Response
+    public function agenda(EvenementRepository $evenementRepository): Response
     {
         return $this->render('prestations/agenda.html.twig', [
             'controller_name' => 'HomeController',
+            'evenements' => $evenementRepository->orderByDate(),
         ]);
     }
 

@@ -18,9 +18,11 @@ strong {
 
 .navbar ul li {
   font-size: 1rem;
+  text-align: center;
 }
 .navbar ul li a {
   font-size: 1rem;
+  text-align: center;
 }
 
 footer {
@@ -185,6 +187,31 @@ header h3 {
   margin: 100px;
 }
 
+.carte-prof {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 300px;
+  margin: 20px;
+}
+
+.img-prof {
+  width: 200px;
+  height: 200px;
+  background-position: center;
+  background-size: cover;
+  margin: 20px;
+  filter: saturate(25%) brightness(50%);
+  transition: all 0.5s;
+}
+
+.img-prof:hover {
+  transform: scale(1.1);
+  filter: saturate(100%) brightness(100%);
+}
+
 #vie-associative {
   margin: 100px;
 }
@@ -237,6 +264,21 @@ header h3 {
   margin-top: 30px;
 }
 
+#img-cours {
+  background-image: url(../photos/cours.jpg);
+  width: 400px;
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+  filter: saturate(25%) brightness(50%);
+  transition: all 0.5s;
+}
+
+#img-cours:hover {
+  filter: saturate(100%) brightness(100%);
+  transform: scale(1.1);
+}
+
 #photo-repetition {
   height: 300px;
   width: 550px;
@@ -256,8 +298,84 @@ header h3 {
   margin: 100px;
 }
 
+#agenda {
+  margin: 100px;
+}
+
+.carte-evenement {
+  display: flex;
+  align-items: center;
+  transition: all 0.5s;
+  margin: 30px;
+  padding: 30px;
+  background-color: rgb(255, 243, 202);
+}
+
+.carte-evenement:hover {
+  scale: 1.1;
+}
+
+.img-evenement {
+  height: 200px;
+  width: 200px;
+  border-radius: 5px;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img-evenement p {
+  font-family: "Dosis";
+  font-size: 2rem;
+  color: black;
+  font-weight: bold;
+}
+
+.corps-evenement {
+  padding: 20px;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.corps-evenement h5 {
+  font-size: 1.5rem;
+}
+.corps-evenement h6 {
+  font-size: 1.2rem;
+}
+
 #formulaire-contact {
   margin: 100px;
+}
+
+#infos-bagad {
+  margin: 100px;
+}
+
+#cartes {
+  display: flex;
+  justify-content: center;
+}
+
+.carte {
+  margin: 30px;
+}
+
+.carte-centrer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-header {
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 h4 {
@@ -361,7 +479,6 @@ table th {
 .cards-wrap {
   display: flex;
   flex-wrap: wrap;
-  width: 95%;
   justify-content: center;
 }
 
@@ -405,4 +522,9 @@ table th {
 }
 .show-buttons button {
   margin: 0 20px;
+}
+
+.image-evenement {
+  height: 200px;
+  width: 300px;
 }/*# sourceMappingURL=style.css.map */

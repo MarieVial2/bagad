@@ -1,7 +1,31 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Bagad Orvez{% endblock %}
+{% block title %}Agenda{% endblock %}
 
 {% block body %}
+<section id="agenda">
+    <div class="centrer">
+    <h2>Agenda</h2>
+    <p>Retrouvez tous les évènements auxquels le bagad se produira (ou s'est produit). A vos agendas !</p>
+</div>
+    <div class="row">
+        <div class="offset-md-2 col-md-8 offset-md-2">
+            {% for evenement in evenements %}
+            <div class="carte-evenement">
+                <div class="img-evenement" style="background: linear-gradient(rgba(255, 255, 255, 0.352), rgba(255, 255, 255, 0.721)), url('{{ asset('uploads/images/' ~ evenement.photoEvenement) }}'); background-position: center;
+                background-size: cover;">
+                    <p>{{ evenement.dateEvenement ? evenement.dateEvenement|date('d-m-y') : '' }}</p>
+                </div>
+                <div class="corps-evenement">
+                    <h5>{{ evenement.nomEvenement }}</h5>
+                    <h6>{{ evenement.lieuEvenement }} - {{ evenement.heureDebutEvenement }}</h6>
+                    <p>{{ evenement.descriptionEvenement }}</p>
+                </div>
+            </div>
 
+            {% endfor %}
+        </div>
+    </div>
+
+</section>
 {% endblock %}

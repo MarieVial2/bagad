@@ -1,15 +1,12 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseAdmin.html.twig' %}
 
-{% block title %}Edit User{% endblock %}
+{% block title %}Editer un utilisateur{% endblock %}
 
 {% block body %}
 <div class="container">
-    <h4>Edit User</h4>
+    <h4>Editer un utilisateur</h4>
 
-    {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('user/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 
-    <a href="{{ path('app_user_index') }}">back to list</a>
-
-    {{ include('user/_delete_form.html.twig') }}
 </div>
 {% endblock %}

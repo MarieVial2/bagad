@@ -6,7 +6,7 @@
 <div class="container">
     <h4>{{ evenement.nomEvenement }}</h4>
 
-    <table class="table">
+    <table class="table table-evenement">
         <tbody>
 
             <tr>
@@ -31,11 +31,15 @@
             </tr>
             <tr>
                 <th>Photo</th>
-                <td>{{ evenement.photoEvenement }}</td>
+                <td> <div class="image-evenement" style="background-image: {{ asset('uploads/images/' ~ evenement.photoEvenement) }};"> </div></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>{{ evenement.descriptionEvenement }}</td>
+            </tr>
+            <tr>
+                <th>Créateur de l'évènement</th>
+                <td>{{ evenement.idUser.prenomUser }} {{ evenement.idUser.nomUser }}</td>
             </tr>
         </tbody>
     </table>
