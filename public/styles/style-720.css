@@ -54,6 +54,13 @@ header h3 {
   filter: saturate(100%) brightness(100%);
 }
 
+#galerie {
+  margin: 30px;
+}
+#galerie img {
+  width: 25%;
+}
+
 #formulaire-demande-prestation {
   margin: 30px;
 }

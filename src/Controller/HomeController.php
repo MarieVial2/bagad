@@ -79,7 +79,7 @@ class HomeController extends AbstractController
     {
         return $this->render('bagad/cours.html.twig', [
             'controller_name' => 'HomeController',
-            'cours' => $coursRepository->findAll(),
+            'cours' => $coursRepository->orderByCours(),
         ]);
     }
 

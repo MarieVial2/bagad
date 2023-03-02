@@ -19,7 +19,7 @@ class CoursType extends AbstractType
                 'label' => 'Instrument enseigné',
             ])
             ->add('publicCours',  TextType::class, [
-                'label' => 'Type de public (adulte/enfant)',
+                'label' => 'Type de public (adulte/enfant) ou laissez blanc si ce cours n\'a pas de public spécifié',
                 'required'   => false,
             ])
             ->add('jourCours',  TextType::class, [

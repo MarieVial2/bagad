@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: "Assistant", sans-serif;
+  scroll-behavior: smooth;
 }
 
 h1,
@@ -16,6 +17,9 @@ strong {
   font-weight: bold;
 }
 
+.navbar {
+  font-family: "Dosis";
+}
 .navbar ul li {
   font-size: 1rem;
   text-align: center;
@@ -30,6 +34,23 @@ footer {
   background-color: rgb(26, 26, 26);
   color: white;
 }
+footer h5 {
+  font-family: "Dosis";
+  color: white;
+}
+footer a {
+  text-decoration: none;
+  color: white;
+  transition: 1s;
+}
+footer a:hover {
+  color: grey;
+  text-decoration: none;
+}
+
+#footer-liens {
+  padding: 30px;
+}
 
 #reseaux {
   display: flex;
@@ -38,18 +59,67 @@ footer {
   align-items: center;
   height: 150px;
 }
+#reseaux p {
+  margin: 10px;
+}
 #reseaux i {
   margin: 15px;
   font-size: 35px;
 }
 #reseaux a {
   color: white;
+  transition: 1s;
+}
+#reseaux a:hover {
+  color: grey;
 }
 
 #copyright {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#reset-password {
+  margin: 100px;
+}
+
+#check-email {
+  margin: 100px;
+}
+
+.haut-page {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.165);
+  color: white;
+  font-size: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  opacity: 1;
+  z-index: 9999;
+}
+
+.haut-page i {
+  transform: rotate(270deg);
+}
+
+.haut-page a {
+  color: white;
+}
+
+.invisible {
+  display: none;
+}
+
+#haut-page .visible {
+  bottom: 50px;
+  opacity: 1;
 }
 
 header {
@@ -219,6 +289,7 @@ header h3 {
 #img-repas-noel {
   height: 300px;
   width: 550px;
+  margin: 20px;
   background-image: url("../photos/repas.jpg");
   background-position: center;
   background-size: cover;
@@ -242,6 +313,7 @@ header h3 {
 #img-pot {
   height: 300px;
   width: 550px;
+  margin: 20px;
   background-image: url("../photos/pot.jpg");
   background-position: center;
   background-size: cover;
@@ -294,6 +366,14 @@ header h3 {
   transform: scale(1.1);
 }
 
+#galerie {
+  margin: 100px;
+}
+#galerie img {
+  width: 12.5%;
+  margin: 5px;
+}
+
 #formulaire-demande-prestation {
   margin: 100px;
 }
@@ -308,7 +388,7 @@ header h3 {
   transition: all 0.5s;
   margin: 30px;
   padding: 30px;
-  background-color: rgb(255, 243, 202);
+  background-color: rgba(254, 195, 0, 0.076);
 }
 
 .carte-evenement:hover {

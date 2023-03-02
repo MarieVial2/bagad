@@ -1,11 +1,23 @@
 <footer>
     <div class="container">
-        <div id="reseaux">
-            <p>Suivez-nous sur les réseaux !</p>
-            <p><a href="https://www.facebook.com/bagadorvault44"><i class="fa-brands fa-facebook"></i></a> <a
-                    href="https://www.instagram.com/bagadorvez/"><i class="fa-brands fa-instagram"></i></a></p>
+        <div class="row">
+            <div class="col-md-6" id="footer-liens">
+                <h5>Bagad Orvez</h5>
+                <ul>
+                    <li><a href="{{ path('app_home')}}">Accueil</a></li>
+                    <li><a href="{{ path('app_infos')}}">Espace adhérent</a></li>
+                    <li><a href="{{ path('app_admin')}}">Espace administration</a></li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <div id="reseaux">
+                    <p>Suivez-nous sur les réseaux !</p>
+                    <p><a href="https://www.facebook.com/bagadorvault44"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/bagadorvez/"><i class="fa-brands fa-instagram"></i></a>
+                    </p>
+                </div>
+            </div>
         </div>
-
         <div id="copyright">
             <p> Copyright © 2023 Bagad Orvez</p>
         </div>

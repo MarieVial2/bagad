@@ -5,9 +5,9 @@
 {% block body %}
 <section id="agenda">
     <div class="centrer">
-    <h2>Agenda</h2>
-    <p>Retrouvez tous les évènements auxquels le bagad se produira (ou s'est produit). A vos agendas !</p>
-</div>
+        <h2>Agenda</h2>
+        <p>Retrouvez tous les évènements auxquels le bagad se produira (ou s'est produit). A vos agendas !</p>
+    </div>
     <div class="row">
         <div class="offset-md-2 col-md-8 offset-md-2">
             {% for evenement in evenements %}
@@ -28,4 +28,8 @@
     </div>
 
 </section>
+
+<div id="haut-page" class="haut-page invisible">
+    <a href="#navbar"><i class="fa-solid fa-arrow-right"></i></a>
+</div>
 {% endblock %}

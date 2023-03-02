@@ -17,3 +17,13 @@
 //       this.classList.add("active");
 //    });
 // }
+
+let hautPage = document.getElementById("haut-page");
+
+window.addEventListener('scroll', function () {
+    if (window.scrollY > 400) {
+        hautPage.classList.remove("invisible");
+    } else {
+        hautPage.classList.add("invisible");
+    }
+})
