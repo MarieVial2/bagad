@@ -12,9 +12,9 @@
         <div class="offset-md-2 col-md-8 offset-md-2">
             {% for evenement in evenements %}
             <div class="carte-evenement">
-                <div class="img-evenement" style="background: linear-gradient(rgba(255, 255, 255, 0.352), rgba(255, 255, 255, 0.721)), url('{{ asset('uploads/images/' ~ evenement.photoEvenement) }}'); background-position: center;
+                <div class="img-evenement" style="background: linear-gradient(rgba(255, 255, 255, 0.552), rgba(255, 255, 255, 0.721)), url('{{ asset('uploads/images/' ~ evenement.photoEvenement) }}'); background-position: center;
                 background-size: cover;">
-                    <p>{{ evenement.dateEvenement ? evenement.dateEvenement|date('d-m-y') : '' }}</p>
+                    <p>{{ evenement.dateEvenement ? evenement.dateEvenement|format_date('full', locale='fr') : '' }}</p>
                 </div>
                 <div class="corps-evenement">
                     <h5>{{ evenement.nomEvenement }}</h5>

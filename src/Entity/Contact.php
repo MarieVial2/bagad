@@ -26,7 +26,7 @@ class Contact
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $emailContact = null;
 
-    #[ORM\Column(length: 14, nullable: true)]
+    #[ORM\Column(length: 25, nullable: true)]
     private ?string $telephoneContact = null;
 
     #[ORM\Column(type: Types::TEXT)]

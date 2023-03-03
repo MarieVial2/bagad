@@ -4,16 +4,20 @@ namespace App\Controller;
 
 use App\Entity\Contact;
 use App\Form\ContactType;
+use App\Services\MailerService;
 use App\Entity\DemandePrestation;
+use Symfony\Component\Mime\Email;
 use App\Repository\ProfRepository;
 use App\Form\DemandePrestationType;
 use App\Repository\CoursRepository;
 use App\Repository\ContactRepository;
 use App\Repository\EvenementRepository;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use App\Repository\DemandePrestationRepository;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Validator\Constraints\DateTime;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class HomeController extends AbstractController
@@ -27,7 +31,7 @@ class HomeController extends AbstractController
     }
 
     #[Route('/contact', name: 'app_contact')]
-    public function contact(Request $request, ContactRepository $contactRepository): Response
+    public function contact(Request $request, ContactRepository $contactRepository, MailerService $mailer): Response
     {
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
@@ -35,7 +39,22 @@ class HomeController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $contactRepository->save($contact, true);
-            $this->addFlash('success', 'Votre message a bien été envoyé !');
+
+
+            $contactFormData = $form->getData();
+            // dd($contactFormData);
+            $subject = 'Demande de contact sur le site du Bagad Orvez de la part de ' . $contactFormData->getEmailContact();
+            $content =
+                $contactFormData->getNomContact() . ' ' . $contactFormData->getPrenomContact() .
+                ' vous a envoyé le message suivant : "'
+                . $contactFormData->getMessageContact() .
+                '". Pour contacter cette personne : '
+                . $contactFormData->getEmailContact() .
+                ' , ' .
+                $contactFormData->getTelephoneContact();
+            $mailer->sendEmail(subject: $subject, content: $content);
+            $this->addFlash('success', 'Votre message a été envoyé');
+
 
             return $this->redirectToRoute('app_contact', [], Response::HTTP_SEE_OTHER);
         }
@@ -96,12 +115,12 @@ class HomeController extends AbstractController
     {
         return $this->render('prestations/agenda.html.twig', [
             'controller_name' => 'HomeController',
-            'evenements' => $evenementRepository->orderByDate(),
+            'evenements' => $evenementRepository->orderByDateLimit(),
         ]);
     }
 
     #[Route('/prestations/demande', name: 'app_demande')]
-    public function demande(Request $request, DemandePrestationRepository $demandePrestationRepository): Response
+    public function demande(Request $request, DemandePrestationRepository $demandePrestationRepository, MailerService $mailer): Response
     {
         $demandePrestation = new DemandePrestation();
         $form = $this->createForm(DemandePrestationType::class, $demandePrestation);
@@ -110,16 +129,45 @@ class HomeController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $demandePrestationRepository->save($demandePrestation, true);
 
-            $this->addFlash('success', 'Votre message a bien été envoyé !');
 
-            return $this->redirectToRoute('app_demande', [
-                'showBandeau' => true
-            ], Response::HTTP_SEE_OTHER);
+            $contactFormData = $form->getData();
+
+            $date = $contactFormData->getDatePrestation()->format('d-m-Y');
+
+
+            $subject = 'Demande de prestation sur le site du Bagad Orvez : ' . $contactFormData->getNomPrestation();
+            $content =
+                'Une demande de prestation est arrivée via le site du bagad. Nom de la prestation : ' .
+                $contactFormData->getNomPrestation() .
+                '. Demande de prestation pour la date suivante : '
+                . $date .
+                ' à '
+                . $contactFormData->getLieuPrestation() .
+                ', pour une prestation de type : '
+                . $contactFormData->getTypePrestation() .
+                '. <br>Heure de début : '
+                . $contactFormData->getHeureDebutPrestation() .
+                ', heure de fin : '
+                . $contactFormData->getHeureFinPrestation() .
+                '. Nb de sonneurs désiré : ' .
+                $contactFormData->getNbMinimumSonneursPrestation() .
+                '. Informations complémentaires : ' .
+                $contactFormData->getInformationsPrestation() .
+                '. Téléphone du demandeur : '
+                . $contactFormData->getTelephoneDemandeurPrestation() .
+                ' ou par mail : '
+                . $contactFormData->getEmailDemandeurPrestation() .
+                '. Plus d\'infos dans l\'espace administration du site.';
+
+            $mailer->sendEmail(subject: $subject, content: $content);
+            $this->addFlash('success', 'Votre demande a été envoyée !');
+
+            return $this->redirectToRoute('app_demande', [], Response::HTTP_SEE_OTHER);
         }
         return $this->render('prestations/demande.html.twig', [
             'controller_name' => 'HomeController',
             'form' => $form,
-            'showBandeau' => false
+
         ]);
     }
 

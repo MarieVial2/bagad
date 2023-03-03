@@ -8,46 +8,49 @@
 
     <table class="table">
         <tbody>
-            <tr>
-                <th>Nom de la prestation</th>
-                <td>{{ demande_prestation.nomPrestation }}</td>
+            <tr class="row">
+                <th class="col-md-4">Nom de la prestation</th>
+                <td class="col-md-8">{{ demande_prestation.nomPrestation }}</td>
             </tr>
-            <tr>
-                <th>Date voulue de la prestation</th>
-                <td>{{ demande_prestation.datePrestation ? demande_prestation.datePrestation|date('Y-m-d') : '' }}</td>
+            <tr class="row">
+                <th class="col-md-4">Date voulue de la prestation</th>
+                <td class="col-md-8">{{ demande_prestation.datePrestation ?
+                    demande_prestation.datePrestation|date('d-m-Y') : '' }}</td>
             </tr>
-            <tr>
-                <th>Heure de début </th>
-                <td>{{ demande_prestation.heureDebutPrestation }}</td>
+            <tr class="row">
+                <th class="col-md-4">Heure de début </th>
+                <td class="col-md-8">{{ demande_prestation.heureDebutPrestation }}</td>
             </tr>
-            <tr>
-                <th>Heure de fin</th>
-                <td>{{ demande_prestation.heureFinPrestation }}</td>
+            <tr class="row">
+                <th class="col-md-4">Heure de fin</th>
+                <td class="col-md-8">{{ demande_prestation.heureFinPrestation }}</td>
             </tr>
-            <tr>
-                <th>Type de prestation</th>
-                <td>{{ demande_prestation.typePrestation }}</td>
+            <tr class="row">
+                <th class="col-md-4">Type de prestation</th>
+                <td class="col-md-8">{{ demande_prestation.typePrestation }}</td>
             </tr>
-            <tr>
-                <th>Informations supplémentaires</th>
-                <td>{{ demande_prestation.informationsPrestation }}</td>
+
+            <tr class="row">
+                <th class="col-md-4">Nombre minimum de sonneurs</th>
+                <td class="col-md-8">{{ demande_prestation.nbMinimumSonneursPrestation }}</td>
             </tr>
-            <tr>
-                <th>Nombre minimum de sonneurs</th>
-                <td>{{ demande_prestation.nbMinimumSonneursPrestation }}</td>
+            <tr class="row">
+                <th class="col-md-4">Email du demandeur</th>
+                <td class="col-md-8">{{ demande_prestation.emailDemandeurPrestation }}</td>
             </tr>
-            <tr>
-                <th>Email du demandeur</th>
-                <td>{{ demande_prestation.emailDemandeurPrestation }}</td>
+            <tr class="row">
+                <th class="col-md-4">Téléphone du demandeur</th>
+                <td class="col-md-8">{{ demande_prestation.telephoneDemandeurPrestation }}</td>
             </tr>
-            <tr>
-                <th>Téléphone du demandeur</th>
-                <td>{{ demande_prestation.telephoneDemandeurPrestation }}</td>
+            <tr class="row">
+                <th class="col-md-4">Informations supplémentaires</th>
+                <td class="col-md-8">{{ demande_prestation.informationsPrestation }}</td>
             </tr>
         </tbody>
     </table>
 
-
-    {{ include('demande_prestation/_delete_form.html.twig') }}
+    <div class="centrer">
+        {{ include('demande_prestation/_delete_form.html.twig') }}
+    </div>
 </div>
 {% endblock %}

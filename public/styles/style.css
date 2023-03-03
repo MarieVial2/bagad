@@ -6,7 +6,7 @@ body {
 
 h1,
 h2 {
-  font-family: "Alegreya", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 h2 {
@@ -19,6 +19,7 @@ strong {
 
 .navbar {
   font-family: "Dosis";
+  font-weight: 500;
 }
 .navbar ul li {
   font-size: 1rem;
@@ -50,6 +51,7 @@ footer a:hover {
 
 #footer-liens {
   padding: 30px;
+  padding-left: 100px;
 }
 
 #reseaux {
@@ -125,7 +127,7 @@ footer a:hover {
 header {
   margin-top: 30px;
   height: 110vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.352), rgba(0, 0, 0, 0.721)), url("../photos/1.PNG");
+  background: linear-gradient(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.702)), url("../photos/1.PNG");
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -155,43 +157,6 @@ header h3 {
 }
 #presentation h2 {
   font-size: 3rem;
-}
-
-#presentation-photo1 {
-  background-image: url("../photos/Cornemuse.PNG");
-}
-
-#presentation-photo2 {
-  background-image: url("../photos/sonneurs.PNG");
-}
-
-#presentation-photo3 {
-  background-image: url("../photos/caisses.PNG");
-}
-
-#presentation-photo4 {
-  background-image: url("../photos/Cornemuse.PNG");
-}
-
-#presentation-photo1,
-#presentation-photo2,
-#presentation-photo3,
-#presentation-photo4 {
-  height: 300px;
-  width: 200 px;
-  background-position: center;
-  background-size: cover;
-  margin-top: 20px;
-  filter: saturate(25%) brightness(50%);
-  transition: all 0.5s;
-}
-
-#presentation-photo1:hover,
-#presentation-photo2:hover,
-#presentation-photo3:hover,
-#presentation-photo4:hover {
-  transform: scale(1.1);
-  filter: saturate(100%) brightness(100%);
 }
 
 .carousel-caption button {
@@ -278,6 +243,43 @@ header h3 {
 }
 
 .img-prof:hover {
+  transform: scale(1.1);
+  filter: saturate(100%) brightness(100%);
+}
+
+#presentation-photo1 {
+  background-image: url("../photos/Cornemuse.PNG");
+}
+
+#presentation-photo2 {
+  background-image: url("../photos/sonneurs.PNG");
+}
+
+#presentation-photo3 {
+  background-image: url("../photos/caisses.PNG");
+}
+
+#presentation-photo4 {
+  background-image: url("../photos/Cornemuse.PNG");
+}
+
+#presentation-photo1,
+#presentation-photo2,
+#presentation-photo3,
+#presentation-photo4 {
+  height: 300px;
+  width: 200 px;
+  background-position: center;
+  background-size: cover;
+  margin-top: 20px;
+  filter: saturate(25%) brightness(50%);
+  transition: all 0.5s;
+}
+
+#presentation-photo1:hover,
+#presentation-photo2:hover,
+#presentation-photo3:hover,
+#presentation-photo4:hover {
   transform: scale(1.1);
   filter: saturate(100%) brightness(100%);
 }
@@ -393,6 +395,7 @@ header h3 {
 
 .carte-evenement:hover {
   scale: 1.1;
+  border: 1px solid rgb(182, 182, 182);
 }
 
 .img-evenement {
@@ -404,6 +407,7 @@ header h3 {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 .img-evenement p {
   font-family: "Dosis";
@@ -456,6 +460,10 @@ header h3 {
   display: flex;
   justify-content: center;
   text-align: center;
+}
+
+#reset {
+  margin: 100px;
 }
 
 h4 {
@@ -605,6 +613,6 @@ table th {
 }
 
 .image-evenement {
-  height: 200px;
+  height: 300px;
   width: 300px;
 }/*# sourceMappingURL=style.css.map */

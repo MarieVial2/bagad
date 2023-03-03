@@ -85,9 +85,22 @@ header h3 {
   font-size: 1rem;
 }
 .corps-evenement h6 {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 
 #infos-bagad {
   margin: 30px;
+}
+
+#reset {
+  margin: 30px;
+}
+
+#bandeau-admin {
+  font-size: 0.7rem;
+}
+
+.image-evenement {
+  height: 200px;
+  width: 200px;
 }/*# sourceMappingURL=style-720.css.map */

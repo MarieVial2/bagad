@@ -38,7 +38,7 @@ class DemandePrestation
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $emailDemandeurPrestation = null;
 
-    #[ORM\Column(length: 14, nullable: true)]
+    #[ORM\Column(length: 25, nullable: true)]
     private ?string $telephoneDemandeurPrestation = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]

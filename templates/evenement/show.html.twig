@@ -8,7 +8,10 @@
 
     <table class="table table-evenement">
         <tbody>
-
+            <tr>
+                <th>Créateur de l'évènement</th>
+                <td>{{ evenement.idUser.prenomUser }} {{ evenement.idUser.nomUser }}</td>
+            </tr>
             <tr>
                 <th>Nom</th>
                 <td>{{ evenement.nomEvenement }}</td>
@@ -30,17 +33,19 @@
                 <td>{{ evenement.lieuEvenement }}</td>
             </tr>
             <tr>
-                <th>Photo</th>
-                <td> <div class="image-evenement" style="background-image: {{ asset('uploads/images/' ~ evenement.photoEvenement) }};"> </div></td>
-            </tr>
-            <tr>
                 <th>Description</th>
                 <td>{{ evenement.descriptionEvenement }}</td>
             </tr>
             <tr>
-                <th>Créateur de l'évènement</th>
-                <td>{{ evenement.idUser.prenomUser }} {{ evenement.idUser.nomUser }}</td>
+                <th>Photo</th>
+                <td>
+                    <div class="image-evenement" style="background-image: url({{ asset('uploads/images/' ~ evenement.photoEvenement) }}); background-position: center;
+                        background-size: cover;">
+                    </div>
+                </td>
             </tr>
+
+
         </tbody>
     </table>
 

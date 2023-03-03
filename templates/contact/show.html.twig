@@ -3,43 +3,47 @@
 {% block title %}Demande{% endblock %}
 
 {% block body %}
-<h4>{{ contact.sujetContact }}</h4>
+<div class="container">
+    <h4>{{ contact.sujetContact }}</h4>
 
-<table class="table">
-    <tbody>
-        <tr>
-            <th>Date de la demande</th>
-            <td>{{ contact.dateCreationContact ?
-                contact.dateCreationContact|date('d-m-Y') : '' }}</td>
-        </tr>
-        <tr>
-            <th>Nom</th>
-            <td>{{ contact.nomContact }}</td>
-        </tr>
-        <tr>
-            <th>Prénom</th>
-            <td>{{ contact.prenomContact }}</td>
-        </tr>
+    <table class="table">
+        <tbody>
+            <tr class="row">
+                <th class="col-md-4">Date de la demande</th>
+                <td class="col-md-8">{{ contact.dateCreationContact ?
+                    contact.dateCreationContact|date('d-m-Y') : '' }}</td>
+            </tr>
+            <tr class="row">
+                <th class="col-md-4">Nom</th>
+                <td class="col-md-8">{{ contact.nomContact }}</td>
+            </tr>
+            <tr class="row">
+                <th class="col-md-4">Prénom</th>
+                <td class="col-md-8">{{ contact.prenomContact }}</td>
+            </tr>
 
-        <tr>
-            <th>Email</th>
-            <td>{{ contact.emailContact }}</td>
-        </tr>
-        <tr>
-            <th>Téléphone</th>
-            <td>{{ contact.telephoneContact }}</td>
-        </tr>
-        <tr>
-            <th>Sujet</th>
-            <td>{{ contact.sujetContact }}</td>
-        </tr>
-        <tr>
-            <th>Message</th>
-            <td>{{ contact.messageContact }}</td>
-        </tr>
-    </tbody>
-</table>
+            <tr class="row">
+                <th class="col-md-4">Email</th>
+                <td class="col-md-8">{{ contact.emailContact }}</td>
+            </tr>
+            <tr class="row">
+                <th class="col-md-4">Téléphone</th>
+                <td class="col-md-8">{{ contact.telephoneContact }}</td>
+            </tr>
+            <tr class="row">
+                <th class="col-md-4">Sujet</th>
+                <td class="col-md-8">{{ contact.sujetContact }}</td>
+            </tr>
+            <tr class="row">
+                <th class="col-md-4">Message</th>
+                <td class="col-md-8">{{ contact.messageContact }}</td>
+            </tr>
+        </tbody>
+    </table>
 
 
-{{ include('contact/_delete_form.html.twig') }}
+    <div class="centrer">
+        {{ include('contact/_delete_form.html.twig') }}
+    </div>
+</div>
 {% endblock %}
