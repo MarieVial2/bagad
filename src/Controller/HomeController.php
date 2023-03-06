@@ -16,6 +16,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use App\Repository\DemandePrestationRepository;
+use App\Repository\ParametreRepository;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Validator\Constraints\DateTime;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -23,10 +24,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class HomeController extends AbstractController
 {
     #[Route('/', name: 'app_home')]
-    public function index(): Response
+    public function index(ParametreRepository $parametreRepository): Response
     {
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
+            'parametres' => $parametreRepository->findAll(),
         ]);
     }
 
@@ -68,7 +70,7 @@ class HomeController extends AbstractController
         // ]);
     }
 
-    #[Route('/informations-bagad', name: 'app_infos')]
+    #[Route('/espace-adhérent', name: 'app_infos')]
     public function informations(): Response
     {
         return $this->render('home/infos.html.twig', [
@@ -94,19 +96,21 @@ class HomeController extends AbstractController
     }
 
     #[Route('/bagad/cours', name: 'app_cours')]
-    public function cours(CoursRepository $coursRepository): Response
+    public function cours(CoursRepository $coursRepository, ParametreRepository $parametreRepository): Response
     {
         return $this->render('bagad/cours.html.twig', [
             'controller_name' => 'HomeController',
             'cours' => $coursRepository->orderByCours(),
+            'parametres' => $parametreRepository->findAll(),
         ]);
     }
 
     #[Route('/vie-associative', name: 'app_vie-associative')]
-    public function vieassociative(): Response
+    public function vieassociative(ParametreRepository $parametreRepository): Response
     {
         return $this->render('home/vie-associative.html.twig', [
             'controller_name' => 'HomeController',
+            'parametres' => $parametreRepository->findAll(),
         ]);
     }
 

@@ -5,6 +5,10 @@
 {% block body %}
 <div class="container">
     <h4>Professeurs de l'école de musique</h4>
+    <p>Les professeurs ci-dessous apparaitront tels quels sur la page <a
+            href="{{ path('app_presentation')}}">présentation</a>. Pour tout changement de prof, supprimez ou éditez les
+        professeurs ci-dessous.</p>
+
     <div class="nouveau">
         <a href="{{ path('app_prof_new') }}">
             <button type="button" class="btn btn-primary">Nouveau</button>

@@ -1,29 +1,40 @@
 {% extends 'baseAdmin.html.twig' %}
 
-{% block title %}User index{% endblock %}
+{% block title %}Adhérents et utilisateurs du site{% endblock %}
 
 {% block body %}
 <div class="container">
-    <h4>Utilisateurs enregistrés</h4>
+    <h4>Adhérents/Utilisateurs du site</h4>
+    <p>Retrouvez ici tous les utilisateurs inscrits du site. Pour attribuer le rôle adhérent à un inscrit, cliquez sur
+        "éditer" et cochez sur la case "adhérent" puis validez. Par défaut, tous les inscrits ont le rôle USER. Le rôle
+        ADHERENT donnera accès à <a href="{{ path('app_infos')}}">la page espace adhérent</a> du site où se trouve tous
+        les fichiers liés au
+        bagad.</p>
 
-    <table class="table">
+    <h5 class="h5-espace">Utilisateurs à valider</h5>
+
+    <table class="table table-hover">
         <thead>
             <tr>
                 <th>Nom</th>
                 <th>Prénom</th>
-                <th>Email</th>
-                
+                <!-- <th>Email</th> -->
+                <th>Rôles</th>
+
                 <th></th>
             </tr>
         </thead>
         <tbody>
-        {% for user in users %}
+            {% for user in users %}
+            <!-- Si l'utilisateur n'a qu'un rôle, c'est forcément "USER" et il reste donc à valider par un admin -->
+            {% if user.roles|length == 1 %}
+            {# {{ dump(user.roles)}} #}
             <tr>
                 <td>{{ user.nomUser }}</td>
                 <td>{{ user.prenomUser }}</td>
-                <td>{{ user.email }}</td>
-                <!-- <td>{{ user.roles ? user.roles|json_encode : '' }}</td> -->
-                
+                <!-- <td>{{ user.email }}</td> -->
+                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+
                 <td class="groupe-boutons">
 
                     <a href="{{ path('app_user_show', {'id': user.id}) }}">
@@ -36,14 +47,61 @@
 
                 </td>
             </tr>
-        {% else %}
+
+
+            {% endif %}
+            {% else %}
             <tr>
                 <td colspan="8">Aucun utilisateur trouvé</td>
             </tr>
-        {% endfor %}
+            {% endfor %}
         </tbody>
     </table>
 
-    
+    <h5 class="h5-espace"> Adhérents validés</h5>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <!-- <th>Email</th> -->
+                <th>Rôles</th>
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <!-- Si un utilisateur a 2 rôle ou plus, c'est qu'on lui a déjà attribué le role adhérent a minima -->
+            {% if user.roles|length >= 2 %}
+            <tr>
+                <td>{{ user.nomUser }}</td>
+                <td>{{ user.prenomUser }}</td>
+                <!-- <td>{{ user.email }}</td> -->
+                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+
+                <td class="groupe-boutons">
+
+                    <a href="{{ path('app_user_show', {'id': user.id}) }}">
+                        <button type="button" class="btn btn-warning">Voir</button>
+                    </a>
+                    <a href="{{ path('app_user_edit', {'id': user.id}) }}">
+                        <button type="button" class="btn btn-success">Editer</button>
+                    </a>
+                    {{ include('user/_delete_form.html.twig') }}
+
+                </td>
+            </tr>
+
+            {% endif %}
+            {% else %}
+            <tr>
+                <td colspan="8">Aucun utilisateur trouvé</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
 </div>
 {% endblock %}

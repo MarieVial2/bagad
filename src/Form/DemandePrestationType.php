@@ -22,6 +22,9 @@ class DemandePrestationType extends AbstractType
             ])
             ->add('datePrestation',  DateType::class, [
                 'label' => 'Date de la prestation',
+
+                'widget' => 'choice',
+                'years' => range(date('Y'), date('Y') + 50)
             ])
             ->add('heureDebutPrestation',  TextType::class, [
                 'label' => 'Heure de début de la prestation',

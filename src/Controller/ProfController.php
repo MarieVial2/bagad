@@ -24,7 +24,7 @@ class ProfController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'app_prof_new', methods: ['GET', 'POST'])]
+    #[Route('/nouveau', name: 'app_prof_new', methods: ['GET', 'POST'])]
     public function new(Request $request, ProfRepository $profRepository, SluggerInterface
     $slugger): Response
     {
@@ -76,7 +76,7 @@ class ProfController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}/edit', name: 'app_prof_edit', methods: ['GET', 'POST'])]
+    #[Route('/{id}/editer', name: 'app_prof_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Prof $prof, ProfRepository $profRepository, SluggerInterface
     $slugger): Response
     {

@@ -6,47 +6,49 @@
 <section id="ecole-presentation">
     <h2>Ecole de musique - présentation</h2>
     <p> Le Bagad forme des sonneurs débutants et confirmés pour qu’ils puissent intégrer le Bagad.
-    L’admission à l’école de musique peut s’effectuer dès l’âge de 6 ou 7 ans et dépend de la bonne
-    coordination des mouvements. Des cours spécifiques (contenu pédagogique, durée) sont prévus
-    pour les enfants.</p>
+        L’admission à l’école de musique peut s’effectuer dès l’âge de 6 ou 7 ans et dépend de la bonne
+        coordination des mouvements. Des <strong>cours spécifiques</strong> (contenu pédagogique, durée) sont prévus
+        pour les enfants.</p>
 
-    <p>Il n’y a aucune limite d’âge pour intégrer l’école de musique et de nombreux musiciens de notre
-    groupe profitent de leur départ en retraite pour rattraper le temps perdu et laisser libre-cour à leur
-    passion.</p>
+    <p>Il n’y a aucune limite d’âge pour intégrer l’<strong>école de musique</strong> et de nombreux musiciens de notre
+        groupe profitent de leur départ en retraite pour rattraper le temps perdu et laisser libre-cour à leur
+        passion.</p>
 
     <p>La formation est assurée par des professeurs de qualité :</p>
 
-        <div class="cards-wrap">
+    <div class="cards-wrap">
 
-            {% for prof in profs %}
-            <div class="carte-prof">
-                <div class="img-prof" style="background: url('{{ asset('uploads/images/' ~ prof.photoProf) }}'); background-position: center;
+        {% for prof in profs %}
+        <div class="carte-prof">
+            <div class="img-prof" style="background: url('{{ asset('uploads/images/' ~ prof.photoProf) }}'); background-position: center;
                 background-size: cover;">
 
-                </div>
-                <div class="corps-prof">
-                    <h5>{{ prof.prenomProf }} {{ prof.nomProf }}</h5>
-                    <h6>{{ prof.pupitreProf }}</h6>
-                    <p>({{ prof.experienceProf }})</p>
-                </div>
             </div>
-            {% endfor %}
+            <div class="corps-prof">
+                <h5>{{ prof.prenomProf }} {{ prof.nomProf }}</h5>
+                <h6>{{ prof.pupitreProf }}</h6>
+                <p>({{ prof.experienceProf }})</p>
+            </div>
         </div>
+        {% endfor %}
+    </div>
 
 
-    <p>Le solfège :</p>
+    <p><strong>Le solfège :</strong></p>
     <p>Le solfège nécessaire pour la musique de Bagad est très simple et peut être assimilé en
-    quelques cours seulement. Il est indispensable au sonneur de Bagad pour pouvoir jouer
-    exactement la même note en même temps que ses camarades. Pas de panique ! … de petits
-    stages de solfège seront organisés dans le cadre des cours et en marge si besoin.</p>
+        quelques cours seulement. Il est indispensable au sonneur de Bagad pour pouvoir jouer
+        exactement la même note en même temps que ses camarades. Pas de panique ! … de petits
+        <strong> stages de solfège</strong> seront organisés dans le cadre des cours et en marge si besoin.
+    </p>
 
     <p>Les instruments de musique :</p>
-        <ul>
-            <li>Le bagad fournit l’ensemble des instruments du pupitre caisses-percussions</li>
-            <li>Le bagad peut prêter quelques bombardes ou cornemuses notamment en début de
-    formation</li>
-        </ul>
-    
+    <ul>
+        <li>Le bagad fournit l’ensemble des instruments du pupitre <strong>caisses-percussions</strong></li>
+        <li>Le bagad peut prêter quelques <strong>bombardes</strong> ou <strong>cornemuses</strong> notamment en début
+            de
+            formation</li>
+    </ul>
+
     <div id="presentation-galerie" class="row">
         <div class="col-md-3">
             <div id="presentation-photo1"></div>
@@ -62,6 +64,6 @@
         </div>
 
     </div>
-    
+
 </section>
 {% endblock %}

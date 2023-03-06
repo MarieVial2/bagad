@@ -21,7 +21,7 @@ class ContactController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'app_contact_new', methods: ['GET', 'POST'])]
+    #[Route('/nouveau', name: 'app_contact_new', methods: ['GET', 'POST'])]
     public function new(Request $request, ContactRepository $contactRepository): Response
     {
         $contact = new Contact();
@@ -48,7 +48,7 @@ class ContactController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}/edit', name: 'app_contact_edit', methods: ['GET', 'POST'])]
+    #[Route('/{id}/editer', name: 'app_contact_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Contact $contact, ContactRepository $contactRepository): Response
     {
         $form = $this->createForm(ContactType::class, $contact);

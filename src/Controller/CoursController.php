@@ -21,7 +21,7 @@ class CoursController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'app_cours_new', methods: ['GET', 'POST'])]
+    #[Route('/nouveau', name: 'app_cours_new', methods: ['GET', 'POST'])]
     public function new(Request $request, CoursRepository $coursRepository): Response
     {
         $cour = new Cours();
@@ -48,7 +48,7 @@ class CoursController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}/edit', name: 'app_cours_edit', methods: ['GET', 'POST'])]
+    #[Route('/{id}/editer', name: 'app_cours_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Cours $cour, CoursRepository $coursRepository): Response
     {
         $form = $this->createForm(CoursType::class, $cour);
@@ -69,7 +69,7 @@ class CoursController extends AbstractController
     #[Route('/{id}', name: 'app_cours_delete', methods: ['POST'])]
     public function delete(Request $request, Cours $cour, CoursRepository $coursRepository): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$cour->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $cour->getId(), $request->request->get('_token'))) {
             $coursRepository->remove($cour, true);
         }
 

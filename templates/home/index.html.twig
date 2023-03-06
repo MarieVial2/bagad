@@ -81,7 +81,12 @@
         <strong>jeunes sonneurs</strong> en cours de formation. Sa vie interne est celle d'un groupe humain, amical,
         chaleureux, accueillant et trans-générationnel (sonneurs de 6 à 73 ans actuellement).
     </p>
-    <p>C'est un Bagad de 5ème catégorie affilié à la fédération Sonerion, représentée en Loire Atlantique
+    <p>C'est un Bagad de
+        {% for parametre in parametres %}
+        {{ parametre.categorieBagadParametre }}
+        {% endfor %}
+
+        affilié à la fédération Sonerion, représentée en Loire Atlantique
         par Sonerion 44.</p>
     <p>Le maître-mot est de se faire <strong>plaisir</strong> en assurant de belles prestations et en continuant à
         progresser,

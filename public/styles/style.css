@@ -31,7 +31,7 @@ strong {
 }
 
 footer {
-  height: 200px;
+  height: 240px;
   background-color: rgb(26, 26, 26);
   color: white;
 }
@@ -395,7 +395,7 @@ header h3 {
 
 .carte-evenement:hover {
   scale: 1.1;
-  border: 1px solid rgb(182, 182, 182);
+  border: 1px solid rgb(205, 205, 205);
 }
 
 .img-evenement {
@@ -489,7 +489,7 @@ table th {
   text-decoration: none;
 }
 #bandeau-admin a:hover {
-  color: rgb(165, 165, 165);
+  color: rgb(205, 205, 205);
 }
 #bandeau-admin i {
   margin: 0 15px;
@@ -615,4 +615,12 @@ table th {
 .image-evenement {
   height: 300px;
   width: 300px;
+}
+
+.info-danger {
+  color: red;
+}
+
+.h5-espace {
+  margin-top: 80px;
 }/*# sourceMappingURL=style.css.map */

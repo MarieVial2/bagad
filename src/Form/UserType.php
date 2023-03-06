@@ -30,7 +30,7 @@ class UserType extends AbstractType
             ])
             ->add('roles', ChoiceType::class, [
                 'choices' => [
-                    'Utilisateur' => 'ROLE_USER',
+
                     'Adhérent' => 'ROLE_ADHERENT',
                     'Administrateur' => 'ROLE_ADMIN'
                 ],

@@ -1,0 +1,14 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Edit Parametre{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h4>Editer les autres infos</h4>
+    <p class="info-danger">Attention : ne laissez aucun champ vide !</p>
+
+    {{ include('parametre/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+</div>
+
+{% endblock %}

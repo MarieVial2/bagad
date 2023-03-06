@@ -40,17 +40,17 @@ class EvenementRepository extends ServiceEntityRepository
     }
 
 
-    public function orderByDate(): array
+    public function orderByDateLimit(): array
     {
         return $this->createQueryBuilder('e')
 
-            ->orderBy('e.dateEvenement', 'DESC')
+            ->orderBy('e.dateEvenement', 'ASC')
             ->setMaxResults(12)
             ->getQuery()
             ->getResult();
     }
 
-    public function orderByDateLimit(): array
+    public function orderByDate(): array
     {
         return $this->createQueryBuilder('e')
 

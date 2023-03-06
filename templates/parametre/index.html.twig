@@ -1,0 +1,74 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Autres infos à parametrer{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h4>Autres infos à paramétrer</h4>
+    <p>Retrouvez ici les informations à paramétrer qui apparaitront sur <a href="{{ path('app_cours')}}">la page
+            cours</a>, <a href="{{ path('app_home')}}">la page
+            d'accueil</a> et <a href="{{ path('app_vie-associative')}}">la page vie associative</a>. </p>
+    <p class="info-danger">
+        Attention : ne
+        laissez aucun champ vide !</p>
+
+    <table class="table">
+        <thead>
+            {% for parametre in parametres %}
+            <tr>
+
+                <th>Année scolaire en cours</th>
+                <td>{{ parametre.anneeScolaireEnCoursParametre }}</td>
+            </tr>
+            <tr>
+                <th>Moment de la répétition</th>
+                <td>{{ parametre.momentRepetitionParametre }}</td>
+            </tr>
+
+            <tr>
+                <th>Lieu de la répétition</th>
+                <td>{{ parametre.lieuRepetitionParametre }}</td>
+            </tr>
+            <tr>
+                <th>Catégorie du bagad</th>
+                <td>{{ parametre.categorieBagadParametre }}</td>
+            </tr>
+            <tr>
+                <th>Prix des cours</th>
+                <td>{{ parametre.prixCoursParametre }}</td>
+            </tr>
+            <tr>
+                <th>Prix de l'adhésion</th>
+                <td>{{ parametre.prixAdhesionParametre|raw }}</td>
+            </tr>
+        </thead>
+        <tbody>
+
+            <!-- <tr>
+
+                <td>{{ parametre.anneeScolaireEnCoursParametre }}</td>
+                <td>{{ parametre.momentRepetitionParametre }}</td>
+                <td>{{ parametre.lieuRepetitionParametre }}</td>
+                <td>{{ parametre.categorieBagadParametre }}</td>
+                <td>{{ parametre.prixCoursParametre }}</td> -->
+            <!-- <td class="groupe-boutons"> -->
+        </tbody>
+    </table>
+    <div class="centrer">
+        <a href="{{ path('app_parametre_edit', {'id': parametre.id}) }}">
+            <button type="button" class="btn btn-success">Editer</button>
+        </a>
+    </div>
+
+    <!-- </td>
+            </tr> -->
+    {% else %}
+    <div>
+        Aucun paramètre trouvé
+    </div>
+    {% endfor %}
+
+
+
+</div>
+{% endblock %}

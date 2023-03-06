@@ -51,7 +51,7 @@ strong {
 // FOOTER -------------------------------------------------------------------
 
 footer {
-    height: 200px;
+    height: 240px;
     background-color: $couleurNoire;
     color: white;
 
@@ -163,7 +163,7 @@ footer {
 header {
     margin-top: 30px;
     height: 110vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.702)), url('../photos/1.PNG');
+    background: linear-gradient($degradenoir3, $degradenoir4), url('../photos/1.PNG');
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -173,7 +173,7 @@ header {
 
     h1,
     h3 {
-        color: rgba(255, 255, 255, 0.774);
+        color: $blanctransparent;
     }
 
     h1 {
@@ -245,12 +245,12 @@ header {
 }
 
 #lien-agenda {
-    background: linear-gradient(rgba(0, 0, 0, 0.479), rgba(0, 0, 0, 0.484)), url('../images/cornemuse1.jpg');
+    background: linear-gradient($degradenoir1, $degradenoir2), url('../images/cornemuse1.jpg');
 
 }
 
 #lien-cours {
-    background: linear-gradient(rgba(0, 0, 0, 0.479), rgba(0, 0, 0, 0.484)), url('../images/partition.jpg');
+    background: linear-gradient($degradenoir1, $degradenoir2), url('../images/partition.jpg');
 
 }
 
@@ -476,13 +476,13 @@ header {
     transition: all .5s;
     margin: 30px;
     padding: 30px;
-    background-color: $jaunepale2;
+    background-color: $jaunepale;
 
 }
 
 .carte-evenement:hover {
     scale: 1.1;
-    border: 1px solid rgb(182, 182, 182);
+    border: 1px solid $grisclair;
 }
 
 .img-evenement {
@@ -592,7 +592,7 @@ table th {
     }
 
     a:hover {
-        color: rgb(165, 165, 165);
+        color: $grisclair;
     }
 
     i {
@@ -605,7 +605,7 @@ table th {
     flex-direction: column;
     align-items: center;
     height: 100%;
-    background-color: rgb(59, 59, 59);
+    background-color: $grisfonce;
     // position: relative;
     // left: -260px;
     // transition: 1s;
@@ -622,7 +622,7 @@ table th {
     align-items: center;
     width: 100%;
     height: 60px;
-    background-color: rgb(59, 59, 59);
+    background-color: $grisfonce;
     color: white;
 
     a {
@@ -634,7 +634,7 @@ table th {
 }
 
 .menu-item:hover {
-    background-color: rgb(152, 152, 152);
+    background-color: $gris;
 }
 
 // .menu-item:active {
@@ -642,7 +642,7 @@ table th {
 // }
 
 .active {
-    background-color: rgb(152, 152, 152);
+    background-color: $gris;
 }
 
 #conteneur-admin {
@@ -750,4 +750,14 @@ table th {
 .image-evenement {
     height: 300px;
     width: 300px;
+}
+
+// AUTRES INFOS-----------------------------------------------------------------
+.info-danger {
+    color: red;
+}
+
+// ADHERENTS --------------------------------------------------------------------
+.h5-espace {
+    margin-top: 80px;
 }

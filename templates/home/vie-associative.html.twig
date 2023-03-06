@@ -10,11 +10,12 @@
     <p>La vie associative au sein du bagad est riche et nos valeurs principales sont le <strong> partage</strong> et la
         <strong>convivialité</strong>.
     </p>
-    <p> L’adhésion à l’association est de :
-    <ul>
-        <li>25€ pour un résident Orvaltais puis 15€ pour chaque membre supplémentaire de la même famille</li>
-        <li>30€ pour un non-Orvaltais puis 20€ pour chaque membre supplémentaire de la même famille</li>
-    </ul>
+    <p> <strong>L’adhésion</strong> à l’association est de :
+
+        {% for parametre in parametres %}
+        {{ parametre.prixAdhesionParametre|raw }}
+        {% endfor %}
+
     <p> Des personnes ne pratiquant pas la musique peuvent également adhérer à l’association et participer
         (ou pas !) à hauteur de leurs compétences et de leurs envies (porte-drapeau, accompagnant lors des
         sorties, secrétariat, etc.).</p>

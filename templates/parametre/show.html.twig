@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Parametre{% endblock %}
+
+{% block body %}
+    <h1>Parametre</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ parametre.id }}</td>
+            </tr>
+            <tr>
+                <th>AnneeScolaireEnCoursParametre</th>
+                <td>{{ parametre.anneeScolaireEnCoursParametre }}</td>
+            </tr>
+            <tr>
+                <th>MomentRepetitionParametre</th>
+                <td>{{ parametre.momentRepetitionParametre }}</td>
+            </tr>
+            <tr>
+                <th>LieuRepetitionParametre</th>
+                <td>{{ parametre.lieuRepetitionParametre }}</td>
+            </tr>
+            <tr>
+                <th>CategorieBagadParametre</th>
+                <td>{{ parametre.categorieBagadParametre }}</td>
+            </tr>
+            <tr>
+                <th>PrixCoursParametre</th>
+                <td>{{ parametre.prixCoursParametre }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_parametre_index') }}">back to list</a>
+
+    <a href="{{ path('app_parametre_edit', {'id': parametre.id}) }}">edit</a>
+
+    {{ include('parametre/_delete_form.html.twig') }}
+{% endblock %}

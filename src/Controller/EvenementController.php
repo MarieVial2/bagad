@@ -26,7 +26,7 @@ class EvenementController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'app_evenement_new', methods: ['GET', 'POST'])]
+    #[Route('/nouveau', name: 'app_evenement_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EvenementRepository $evenementRepository, SluggerInterface
     $slugger): Response
     {
@@ -35,7 +35,7 @@ class EvenementController extends AbstractController
         $form->handleRequest($request);
         // 1/2 On recupère les infos du user connecté
         $user = $this->getUser();
-        
+
 
         if ($form->isSubmitted() && $form->isValid()) {
             $image = $form->get('photoEvenement')->getData();
@@ -79,7 +79,7 @@ class EvenementController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}/edit', name: 'app_evenement_edit', methods: ['GET', 'POST'])]
+    #[Route('/{id}/editer', name: 'app_evenement_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Evenement $evenement, EvenementRepository $evenementRepository, SluggerInterface
     $slugger): Response
     {
@@ -110,7 +110,7 @@ class EvenementController extends AbstractController
         //             $newFilename
         //         );
         //     }
-            // Création d'une variable pour stocker l'image et ne pas l'écraser à l'upload de l'evenement
+        // Création d'une variable pour stocker l'image et ne pas l'écraser à l'upload de l'evenement
         $oldPhotoEvenement = $evenement->getPhotoEvenement();
 
         $form = $this->createForm(EvenementType::class, $evenement);

@@ -22,7 +22,7 @@ class DemandePrestationController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'app_demande_prestation_new', methods: ['GET', 'POST'])]
+    #[Route('/nouveau', name: 'app_demande_prestation_new', methods: ['GET', 'POST'])]
     public function new(Request $request, DemandePrestationRepository $demandePrestationRepository): Response
     {
         $demandePrestation = new DemandePrestation();
@@ -49,7 +49,7 @@ class DemandePrestationController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}/edit', name: 'app_demande_prestation_edit', methods: ['GET', 'POST'])]
+    #[Route('/{id}/editer', name: 'app_demande_prestation_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, DemandePrestation $demandePrestation, DemandePrestationRepository $demandePrestationRepository): Response
     {
         $form = $this->createForm(DemandePrestationType::class, $demandePrestation);
