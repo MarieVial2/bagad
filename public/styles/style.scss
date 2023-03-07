@@ -105,8 +105,13 @@ footer {
 
 #copyright {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#rgpd {
+    font-size: 0.7rem;
 }
 
 //CONNEXION ---------------------------------------------------------------------
@@ -531,7 +536,7 @@ header {
 }
 
 //
-//INFORMATIONS BAGAD------------------------------------------------------------
+//INFORMATIONS BAGAD - ESPACE ADHERENT------------------------------------------------------------
 //-------------------------------------------------------------------------------
 #infos-bagad {
     margin: 100px;
@@ -562,6 +567,23 @@ header {
 //RESET PASSWORD -------------------------------------------------------------
 #reset {
     margin: 100px;
+}
+
+//MENTIONS LEGALES -------------------------------------------------------------
+#mentions {
+    margin : 80px;
+}
+b {
+    font-weight: bold;
+}
+
+.mentions-div {
+    margin-top : 50px;
+}
+
+//POLITIQUE DE CONFIDENTIALITE -------------------------------------------------------------
+#confidentialite {
+    margin : 80px;
 }
 
 //--------------------------------------------------------------------------------

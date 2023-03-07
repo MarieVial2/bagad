@@ -32,6 +32,12 @@ class Parametre
     #[ORM\Column(type: Types::TEXT)]
     private ?string $prixAdhesionParametre = null;
 
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $contactsDemandePrestationParametre = null;
+
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $contactsContactParametre = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -105,6 +111,30 @@ class Parametre
     public function setPrixAdhesionParametre(string $prixAdhesionParametre): self
     {
         $this->prixAdhesionParametre = $prixAdhesionParametre;
+
+        return $this;
+    }
+
+    public function getContactsDemandePrestationParametre(): ?string
+    {
+        return $this->contactsDemandePrestationParametre;
+    }
+
+    public function setContactsDemandePrestationParametre(string $contactsDemandePrestationParametre): self
+    {
+        $this->contactsDemandePrestationParametre = $contactsDemandePrestationParametre;
+
+        return $this;
+    }
+
+    public function getContactsContactParametre(): ?string
+    {
+        return $this->contactsContactParametre;
+    }
+
+    public function setContactsContactParametre(string $contactsContactParametre): self
+    {
+        $this->contactsContactParametre = $contactsContactParametre;
 
         return $this;
     }

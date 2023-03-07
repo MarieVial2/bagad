@@ -33,7 +33,7 @@ class HomeController extends AbstractController
     }
 
     #[Route('/contact', name: 'app_contact')]
-    public function contact(Request $request, ContactRepository $contactRepository, MailerService $mailer): Response
+    public function contact(Request $request, ContactRepository $contactRepository, MailerService $mailer, ParametreRepository $parametreRepository): Response
     {
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
@@ -64,6 +64,7 @@ class HomeController extends AbstractController
         return $this->renderForm('home/contact.html.twig', [
             'contact' => $contact,
             'form' => $form,
+            'parametres' => $parametreRepository->findAll(),
         ]);
         // return $this->render('home/contact.html.twig', [
         //     'controller_name' => 'HomeController',
@@ -124,7 +125,7 @@ class HomeController extends AbstractController
     }
 
     #[Route('/prestations/demande', name: 'app_demande')]
-    public function demande(Request $request, DemandePrestationRepository $demandePrestationRepository, MailerService $mailer): Response
+    public function demande(Request $request, DemandePrestationRepository $demandePrestationRepository, MailerService $mailer, ParametreRepository $parametreRepository): Response
     {
         $demandePrestation = new DemandePrestation();
         $form = $this->createForm(DemandePrestationType::class, $demandePrestation);
@@ -171,6 +172,7 @@ class HomeController extends AbstractController
         return $this->render('prestations/demande.html.twig', [
             'controller_name' => 'HomeController',
             'form' => $form,
+            'parametres' => $parametreRepository->findAll(),
 
         ]);
     }
@@ -189,6 +191,26 @@ class HomeController extends AbstractController
     {
         return $this->render('admin/index-admin.html.twig', [
             'controller_name' => 'HomeController',
+        ]);
+    }
+
+
+
+    #[Route('/mentions-legales', name: 'app_mentions')]
+    public function mentions(): Response
+    {
+        return $this->render('rgpd/mentions.html.twig', [
+            'controller_name' => 'HomeController',
+            
+        ]);
+    }
+
+    #[Route('/politique-confidentialite', name: 'app_confidentialite')]
+    public function confidentialite(): Response
+    {
+        return $this->render('rgpd/confidentialite.html.twig', [
+            'controller_name' => 'HomeController',
+            
         ]);
     }
 }

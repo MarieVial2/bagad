@@ -31,6 +31,12 @@ class ParametreType extends AbstractType
             ])
             ->add('prixAdhesionParametre',  CKEditorType::class, [
                 'label' => 'Les prix de l\'adhésion',
+            ])
+            ->add('contactsDemandePrestationParametre',  CKEditorType::class, [
+                'label' => 'Les contacts figurant sur la page de demande de prestation',
+            ])
+            ->add('contactsContactParametre',  CKEditorType::class, [
+                'label' => 'Les contacts figurant sur la page de contact',
             ]);
     }
 

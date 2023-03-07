@@ -1,5 +1,9 @@
 {{ form_start(form) }}
 {{ form_widget(form) }}
+
+<p>En renseignant vos informations personnelles, vous acceptez d'être contacté(e) pour la gestion de votre demande, et vous acceptez les termes de notre <a href="{{ path('app_confidentialite')}}"> politique de confidentialité</a>.</p>
+    
+<p><input type="checkbox" required name="acceptation"> Accepter les conditions mentionnées ci-dessus et la politique de confidentialité.</p>
 <div class="form-button">
     <button class="btn btn-primary">{{ button_label|default('Envoyer') }}</button>
 </div>

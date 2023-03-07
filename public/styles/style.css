@@ -78,8 +78,13 @@ footer a:hover {
 
 #copyright {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+#rgpd {
+  font-size: 0.7rem;
 }
 
 #reset-password {
@@ -464,6 +469,22 @@ header h3 {
 
 #reset {
   margin: 100px;
+}
+
+#mentions {
+  margin: 80px;
+}
+
+b {
+  font-weight: bold;
+}
+
+.mentions-div {
+  margin-top: 50px;
+}
+
+#confidentialite {
+  margin: 80px;
 }
 
 h4 {

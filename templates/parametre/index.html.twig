@@ -7,7 +7,7 @@
     <h4>Autres infos à paramétrer</h4>
     <p>Retrouvez ici les informations à paramétrer qui apparaitront sur <a href="{{ path('app_cours')}}">la page
             cours</a>, <a href="{{ path('app_home')}}">la page
-            d'accueil</a> et <a href="{{ path('app_vie-associative')}}">la page vie associative</a>. </p>
+            d'accueil</a>, <a href="{{ path('app_vie-associative')}}">la page vie associative</a>, <a href="{{ path('app_demande')}}">la page demande de contact</a> et <a href="{{ path('app_contact')}}">la page contact</a>. </p>
     <p class="info-danger">
         Attention : ne
         laissez aucun champ vide !</p>
@@ -40,6 +40,14 @@
             <tr>
                 <th>Prix de l'adhésion</th>
                 <td>{{ parametre.prixAdhesionParametre|raw }}</td>
+            </tr>
+            <tr>
+                <th>Contacts de la page "demande de prestation"</th>
+                <td>{{ parametre.contactsDemandePrestationParametre|raw }}</td>
+            </tr>
+            <tr>
+                <th>Contacts de la page "contact"</th>
+                <td>{{ parametre.contactsContactParametre|raw }}</td>
             </tr>
         </thead>
         <tbody>

@@ -16,11 +16,9 @@
     </p>
     <p>Pour toute demande d’information ou de devis pour une prestation, merci de remplir le formulaire suivant, ou de
         contacter les personnes suivantes :</p>
-    <ul>
-        <li>Eric Serandour au 06.73.09.38.22</li>
-        <li>Loïck Morand au 06.14.40.81.26</li>
-        <li>Bagadorvez44@gmail.com</li>
-    </ul>
+        {% for parametre in parametres %}
+        {{ parametre.contactsDemandePrestationParametre|raw  }}
+        {% endfor %}
     <div class="row">
         <div class="offset-md-3 col-md-6 offset-md-3">
 
