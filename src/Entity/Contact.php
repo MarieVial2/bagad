@@ -6,6 +6,8 @@ use App\Repository\ContactRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 #[ORM\Entity(repositoryClass: ContactRepository::class)]
 class Contact
 {
@@ -13,22 +15,32 @@ class Contact
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
-
+    #[Assert\NotBlank(
+        message: 'Ce champ ne peut pas être vide, le nom doit être renseigné.',
+    )]
     #[ORM\Column(length: 50)]
     private ?string $nomContact = null;
+
 
     #[ORM\Column(length: 50, nullable: true)]
     private ?string $prenomContact = null;
 
+
     #[ORM\Column(length: 255)]
     private ?string $sujetContact = null;
 
+    #[Assert\Email(
+        message: 'L\'email {{ value }} n\'est pas un email valide. Format valide : xxxx@xxx.xx',
+    )]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $emailContact = null;
 
     #[ORM\Column(length: 25, nullable: true)]
     private ?string $telephoneContact = null;
 
+    #[Assert\NotBlank(
+        message: 'Ce champ ne peut pas être vide, le message doit être renseigné.',
+    )]
     #[ORM\Column(type: Types::TEXT)]
     private ?string $messageContact = null;
 

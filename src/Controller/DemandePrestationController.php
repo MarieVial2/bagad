@@ -4,15 +4,17 @@ namespace App\Controller;
 
 use App\Entity\DemandePrestation;
 use App\Form\DemandePrestationType;
-use App\Repository\DemandePrestationRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use App\Repository\DemandePrestationRepository;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('/demande/prestation')]
 class DemandePrestationController extends AbstractController
 {
+    #[IsGranted('ROLE_ADMIN')]
     #[Route('/', name: 'app_demande_prestation_index', methods: ['GET'])]
     public function index(DemandePrestationRepository $demandePrestationRepository): Response
     {
@@ -22,6 +24,7 @@ class DemandePrestationController extends AbstractController
         ]);
     }
 
+    #[IsGranted('ROLE_ADMIN')]
     #[Route('/nouveau', name: 'app_demande_prestation_new', methods: ['GET', 'POST'])]
     public function new(Request $request, DemandePrestationRepository $demandePrestationRepository): Response
     {
@@ -41,6 +44,7 @@ class DemandePrestationController extends AbstractController
         // ]);
     }
 
+    #[IsGranted('ROLE_ADMIN')]
     #[Route('/{id}', name: 'app_demande_prestation_show', methods: ['GET'])]
     public function show(DemandePrestation $demandePrestation): Response
     {
@@ -49,6 +53,7 @@ class DemandePrestationController extends AbstractController
         ]);
     }
 
+    #[IsGranted('ROLE_ADMIN')]
     #[Route('/{id}/editer', name: 'app_demande_prestation_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, DemandePrestation $demandePrestation, DemandePrestationRepository $demandePrestationRepository): Response
     {
@@ -67,6 +72,7 @@ class DemandePrestationController extends AbstractController
         ]);
     }
 
+    #[IsGranted('ROLE_ADMIN')]
     #[Route('/{id}', name: 'app_demande_prestation_delete', methods: ['POST'])]
     public function delete(Request $request, DemandePrestation $demandePrestation, DemandePrestationRepository $demandePrestationRepository): Response
     {

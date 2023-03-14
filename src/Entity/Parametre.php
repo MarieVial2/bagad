@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\ParametreRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ParametreRepository::class)]
 class Parametre
@@ -26,6 +27,10 @@ class Parametre
     #[ORM\Column(length: 50)]
     private ?string $categorieBagadParametre = null;
 
+    #[Assert\Type(
+        type: 'integer',
+        message: 'La valeur {{ value }} n\'est pas valide. Il doit d\'agir d\'un nombre simple, sans symbole ou lettre.',
+    )]
     #[ORM\Column(length: 50)]
     private ?string $prixCoursParametre = null;
 

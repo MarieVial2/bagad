@@ -12,13 +12,14 @@ use App\Form\DemandePrestationType;
 use App\Repository\CoursRepository;
 use App\Repository\ContactRepository;
 use App\Repository\EvenementRepository;
+use App\Repository\ParametreRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use App\Repository\DemandePrestationRepository;
-use App\Repository\ParametreRepository;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Validator\Constraints\DateTime;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class HomeController extends AbstractController
@@ -71,6 +72,7 @@ class HomeController extends AbstractController
         // ]);
     }
 
+    #[IsGranted('ROLE_ADHERENT')]
     #[Route('/espace-adhérent', name: 'app_infos')]
     public function informations(): Response
     {
@@ -186,6 +188,7 @@ class HomeController extends AbstractController
     // }
 
 
+    #[IsGranted('ROLE_ADMIN')]
     #[Route('/admin', name: 'app_admin')]
     public function admin(): Response
     {
@@ -201,7 +204,7 @@ class HomeController extends AbstractController
     {
         return $this->render('rgpd/mentions.html.twig', [
             'controller_name' => 'HomeController',
-            
+
         ]);
     }
 
@@ -210,7 +213,7 @@ class HomeController extends AbstractController
     {
         return $this->render('rgpd/confidentialite.html.twig', [
             'controller_name' => 'HomeController',
-            
+
         ]);
     }
 }

@@ -564,6 +564,17 @@ header {
     text-align: center;
 }
 
+.cartes-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.carte-solo {
+    display: flex;
+    justify-content: center;
+}
+
 //RESET PASSWORD -------------------------------------------------------------
 #reset {
     margin: 100px;
@@ -571,19 +582,20 @@ header {
 
 //MENTIONS LEGALES -------------------------------------------------------------
 #mentions {
-    margin : 80px;
+    margin: 80px;
 }
+
 b {
     font-weight: bold;
 }
 
 .mentions-div {
-    margin-top : 50px;
+    margin-top: 50px;
 }
 
 //POLITIQUE DE CONFIDENTIALITE -------------------------------------------------------------
 #confidentialite {
-    margin : 80px;
+    margin: 80px;
 }
 
 //--------------------------------------------------------------------------------

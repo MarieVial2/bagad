@@ -5,14 +5,16 @@ namespace App\Controller;
 use App\Entity\Parametre;
 use App\Form\ParametreType;
 use App\Repository\ParametreRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('/parametre')]
 class ParametreController extends AbstractController
 {
+    #[IsGranted('ROLE_ADMIN')]
     #[Route('/', name: 'app_parametre_index', methods: ['GET'])]
     public function index(ParametreRepository $parametreRepository): Response
     {
@@ -21,6 +23,7 @@ class ParametreController extends AbstractController
         ]);
     }
 
+    #[IsGranted('ROLE_ADMIN')]
     #[Route('/nouveau', name: 'app_parametre_new', methods: ['GET', 'POST'])]
     public function new(Request $request, ParametreRepository $parametreRepository): Response
     {
@@ -40,6 +43,7 @@ class ParametreController extends AbstractController
         ]);
     }
 
+    #[IsGranted('ROLE_ADMIN')]
     #[Route('/{id}', name: 'app_parametre_show', methods: ['GET'])]
     public function show(Parametre $parametre): Response
     {
@@ -48,6 +52,7 @@ class ParametreController extends AbstractController
         ]);
     }
 
+    #[IsGranted('ROLE_ADMIN')]
     #[Route('/{id}/editer', name: 'app_parametre_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Parametre $parametre, ParametreRepository $parametreRepository): Response
     {
@@ -66,6 +71,7 @@ class ParametreController extends AbstractController
         ]);
     }
 
+    #[IsGranted('ROLE_ADMIN')]
     #[Route('/{id}', name: 'app_parametre_delete', methods: ['POST'])]
     public function delete(Request $request, Parametre $parametre, ParametreRepository $parametreRepository): Response
     {

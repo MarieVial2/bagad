@@ -467,6 +467,17 @@ header h3 {
   text-align: center;
 }
 
+.cartes-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.carte-solo {
+  display: flex;
+  justify-content: center;
+}
+
 #reset {
   margin: 100px;
 }

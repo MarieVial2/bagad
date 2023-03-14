@@ -10,12 +10,14 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
 #[Route('/prof')]
 class ProfController extends AbstractController
 {
+    #[IsGranted('ROLE_ADMIN')]
     #[Route('/', name: 'app_prof_index', methods: ['GET'])]
     public function index(ProfRepository $profRepository): Response
     {
@@ -24,6 +26,7 @@ class ProfController extends AbstractController
         ]);
     }
 
+    #[IsGranted('ROLE_ADMIN')]
     #[Route('/nouveau', name: 'app_prof_new', methods: ['GET', 'POST'])]
     public function new(Request $request, ProfRepository $profRepository, SluggerInterface
     $slugger): Response
@@ -68,6 +71,7 @@ class ProfController extends AbstractController
         ]);
     }
 
+    #[IsGranted('ROLE_ADMIN')]
     #[Route('/{id}', name: 'app_prof_show', methods: ['GET'])]
     public function show(Prof $prof): Response
     {
@@ -76,6 +80,7 @@ class ProfController extends AbstractController
         ]);
     }
 
+    #[IsGranted('ROLE_ADMIN')]
     #[Route('/{id}/editer', name: 'app_prof_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Prof $prof, ProfRepository $profRepository, SluggerInterface
     $slugger): Response
@@ -130,6 +135,7 @@ class ProfController extends AbstractController
         ]);
     }
 
+    #[IsGranted('ROLE_ADMIN')]
     #[Route('/{id}', name: 'app_prof_delete', methods: ['POST'])]
     public function delete(Request $request, Prof $prof, ProfRepository $profRepository): Response
     {

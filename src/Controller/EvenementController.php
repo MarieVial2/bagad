@@ -11,13 +11,16 @@ use Symfony\Component\HttpFoundation\File\File;
 
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
-use Symfony\Component\Security\Core\User\UserInterface;
 
 #[Route('/evenement')]
 class EvenementController extends AbstractController
 {
+
+    #[IsGranted('ROLE_ADMIN')]
     #[Route('/', name: 'app_evenement_index', methods: ['GET'])]
     public function index(EvenementRepository $evenementRepository): Response
     {
@@ -26,6 +29,8 @@ class EvenementController extends AbstractController
         ]);
     }
 
+
+    #[IsGranted('ROLE_ADMIN')]
     #[Route('/nouveau', name: 'app_evenement_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EvenementRepository $evenementRepository, SluggerInterface
     $slugger): Response
@@ -71,6 +76,7 @@ class EvenementController extends AbstractController
         ]);
     }
 
+    #[IsGranted('ROLE_ADMIN')]
     #[Route('/{id}', name: 'app_evenement_show', methods: ['GET'])]
     public function show(Evenement $evenement): Response
     {
@@ -79,6 +85,7 @@ class EvenementController extends AbstractController
         ]);
     }
 
+    #[IsGranted('ROLE_ADMIN')]
     #[Route('/{id}/editer', name: 'app_evenement_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Evenement $evenement, EvenementRepository $evenementRepository, SluggerInterface
     $slugger): Response
@@ -160,6 +167,7 @@ class EvenementController extends AbstractController
         ]);
     }
 
+    #[IsGranted('ROLE_ADMIN')]
     #[Route('/{id}', name: 'app_evenement_delete', methods: ['POST'])]
     public function delete(Request $request, Evenement $evenement, EvenementRepository $evenementRepository): Response
     {

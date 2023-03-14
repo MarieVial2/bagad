@@ -6,6 +6,8 @@ use App\Repository\DemandePrestationRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 #[ORM\Entity(repositoryClass: DemandePrestationRepository::class)]
 class DemandePrestation
 {
@@ -35,6 +37,9 @@ class DemandePrestation
     #[ORM\Column(nullable: true)]
     private ?int $nbMinimumSonneursPrestation = null;
 
+    #[Assert\Email(
+        message: 'L\'email {{ value }} n\'est pas un email valide. Format valide : xxxx@xxx.xx',
+    )]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $emailDemandeurPrestation = null;
 
