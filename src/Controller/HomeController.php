@@ -216,4 +216,13 @@ class HomeController extends AbstractController
 
         ]);
     }
+
+    #[Route('/validation', name: 'app_validation_inscription')]
+    public function validationInscription(): Response
+    {
+        return $this->render('home/validation.html.twig', [
+            'controller_name' => 'HomeController',
+
+        ]);
+    }
 }

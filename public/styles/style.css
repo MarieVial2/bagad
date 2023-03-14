@@ -1,5 +1,11 @@
+html {
+  padding: 0;
+  margin: 0;
+}
+
 body {
   margin: 0;
+  padding: 0;
   font-family: "Assistant", sans-serif;
   scroll-behavior: smooth;
 }
@@ -21,6 +27,10 @@ strong {
   font-family: "Dosis";
   font-weight: 500;
 }
+.navbar img {
+  width: 103px;
+  height: 85.33px;
+}
 .navbar ul li {
   font-size: 1rem;
   text-align: center;
@@ -30,10 +40,23 @@ strong {
   text-align: center;
 }
 
+@media (min-width: 990px) and (max-width: 1120px) {
+  .navbar ul li {
+    font-size: 0.8rem;
+  }
+  .navbar ul li a {
+    font-size: 0.8rem;
+  }
+}
 footer {
-  height: 240px;
+  height: 260px;
   background-color: rgb(26, 26, 26);
   color: white;
+}
+@media (max-width: 770px) {
+  footer {
+    height: 400px;
+  }
 }
 footer h5 {
   font-family: "Dosis";
@@ -177,10 +200,16 @@ header h3 {
 }
 
 #liens {
+  overflow-x: hidden;
   margin-bottom: 100px;
 }
 #liens h4 {
   font-size: 2rem;
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  #liens h4 {
+    font-size: 1.3rem;
+  }
 }
 
 #lien-agenda,
@@ -192,6 +221,13 @@ header h3 {
   align-items: center;
   text-align: center;
   height: 500px;
+}
+@media (max-width: 770px) {
+  #lien-agenda,
+  #lien-contact,
+  #lien-cours {
+    width: 99%;
+  }
 }
 #lien-agenda button,
 #lien-contact button,
@@ -439,6 +475,23 @@ header h3 {
 
 #formulaire-contact {
   margin: 100px;
+}
+
+.min-height {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#validation {
+  min-height: 80vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#validation img {
+  width: 25%;
 }
 
 #infos-bagad {
