@@ -3,16 +3,18 @@
 {% block title %}Inscription validée{% endblock %}
 
 {% block body %}
-<div class="min-height">
-    <div id="validation">
-        <div id="texte-validation">
+<div class="min-height container">
+    <div class="row" id="validation">
+        <div class="col-md-6" id="texte-validation">
             <p>Vous vous êtes bien inscrit, veuillez attendre la validation de l'administrateur pour avoir le rôle
                 Adhérent et
                 pouvoir accéder au contenu.</p>
             <a href="{{ path('app_home')}}">Retour à l'accueil du Bagad Orvez <i
                     class="fa-solid fa-arrow-right"></i></a>
         </div>
-        <img src="{{ asset('photos/8.jpg') }}" alt="Bagad Orvez">
+        <div class="col-md-6" id="img-validation">
+            <img src="{{ asset('photos/8.jpg') }}" alt="Bagad Orvez">
+        </div>
     </div>
 </div>
 {% endblock %}

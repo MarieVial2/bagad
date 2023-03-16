@@ -42,24 +42,33 @@
     <script type="text/javascript" src="{{asset('tarteaucitron/tarteaucitron.js')}}"></script>
     <script>
         tarteaucitron.init({
-            "privacyUrl": "{{ path('app_confidentialite')}}", /* URL de la page de la politique de vie privée */
+            "privacyUrl": "", /* URL de la page de la politique de vie privée */
             "hashtag": "#tarteaucitron", /* Ouvrir le panneau contenant ce hashtag */
             "cookieName": "tarteaucitron", /* Nom du Cookie */
-            "orientation": "middle", /* Position de la banniére (top - bottom) */
-            "showAlertSmall": true, /* Voir la bannière réduite en bas à droite */
+            "orientation": "bottom", /* Position de la banniére (top - bottom) */
+            "showAlertSmall": false, /* Voir la bannière réduite en bas à droite */
             "cookieslist": true, /* Voir la liste des cookies */
             "adblocker": false, /* Voir une alerte si un bloqueur de publicités est détecté */
             "AcceptAllCta": true, /* Voir le bouton accepter tout (quand highPrivacy est à true) */
             "highPrivacy": true, /* Désactiver le consentement automatique */
-            "handleBrowserDNTRequest": false, /* Si la protection du suivi du navigateur est activée, tout i
-nterdire */
+            "handleBrowserDNTRequest": false, /* Si la protection du suivi du navigateur est activée, tout interdire */
             "removeCredit": false, /* Retirer le lien vers tarteaucitron.js */
             "moreInfoLink": true, /* Afficher le lien 'voir plus d'infos' */
-            "useExternalCss": false, /* Si false, tarteaucitron.css sera chargé*/
-            "cookieDomain": '.my-multisite-domaine.fr', /* Cookie multisite */
+            "useExternalCss": false, /* Si false, tarteaucitron.css sera chargé */
+            //"cookieDomain": '.my-multisite-domaine.fr', /* Cookie multisite */
             "readmoreLink": '/cookiespolicy' /* Lien vers la page 'Lire plus' */
         });
     </script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lcu4gYlAAAAAMo-bGcB_riN38YNQnsNQy_7YKXB"></script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VJ8GMY6JB2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VJ8GMY6JB2');
+</script>
     {% endblock %}
 </head>
 
@@ -76,6 +85,16 @@ nterdire */
         tarteaucitron.user.analyticsMore = function () { /* optionnal ga.push() */ };
         (tarteaucitron.job = tarteaucitron.job || []).push('analytics');
     </script>
+    <script>
+        function onClick(e) {
+        e.preventDefault();
+        grecaptcha.ready(function() {
+        grecaptcha.execute('6Lcu4gYlAAAAAMo-bGcB_riN38YNQnsNQy_7YKXB', {action: 'submit'}).then(function(token) {
+        console.log('captacha');
+        });
+        });
+        }
+        </script>
 </body>
 
 </html>

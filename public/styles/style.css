@@ -487,11 +487,16 @@ header h3 {
 #validation {
   min-height: 80vh;
   display: flex;
-  justify-content: space-around;
+  text-align: center;
   align-items: center;
 }
-#validation img {
-  width: 25%;
+
+#img-validation {
+  display: flex;
+  justify-content: center;
+}
+#img-validation img {
+  width: 300px;
 }
 
 #infos-bagad {

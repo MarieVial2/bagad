@@ -598,11 +598,17 @@ header {
 #validation {
     min-height: 80vh;
     display: flex;
-    justify-content: space-around;
+    text-align : center;
     align-items: center;
 
+    
+}
+
+#img-validation {
+    display : flex;
+    justify-content: center;
     img {
-        width: calc(100%/4);
+        width: 300px;
     }
 }
 
