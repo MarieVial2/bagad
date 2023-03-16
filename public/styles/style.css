@@ -23,6 +23,10 @@ strong {
   font-weight: bold;
 }
 
+.button {
+  font-size: 1.3rem;
+}
+
 .navbar {
   font-family: "Dosis";
   font-weight: 500;
@@ -229,10 +233,8 @@ header h3 {
     width: 99%;
   }
 }
-#lien-agenda button,
-#lien-contact button,
-#lien-cours button {
-  font-size: 1.1rem;
+
+.button2 {
   margin: 20px;
   padding: 15px;
 }

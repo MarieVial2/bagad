@@ -27,6 +27,10 @@ strong {
     font-weight: bold;
 }
 
+.button {
+    font-size : 1.3rem;
+}
+
 
 // NAVBAR --------------------------------------------------------------------------
 .navbar {
@@ -291,12 +295,16 @@ header {
     }
 
 
-    button {
-        font-size: 1.1rem;
-        margin: 20px;
-        padding: 15px;
-    }
+    // button {
+    //     font-size: 1.1rem;
+    //     margin: 20px;
+    //     padding: 15px;
+    // }
 
+}
+.button2{
+    margin: 20px;
+    padding: 15px;
 }
 
 #lien-agenda {

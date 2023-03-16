@@ -12,17 +12,21 @@ class MailerService
     }
 
     public function sendEmail(
-        $to = 'siteadmin@hotmail.fr',
+        $to = 'bagadorvez44@gmail.com',
         $subject = 'This is the Mail subject !',
         $content = '',
         $text = ''
     ): void {
         $email = (new Email())
-            ->from('noreply@mysite.com')
+            ->from('contact@bagadorvez.bzh')
             ->to($to)
             ->subject($subject)
             ->text($text)
             ->html($content);
         $this->mailer->send($email);
     }
+
+    // public function send($email) {
+    //     $this->mailer->send($email);
+    // }
 }
