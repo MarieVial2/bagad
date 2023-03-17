@@ -28,7 +28,7 @@ strong {
 }
 
 .button {
-    font-size : 1.3rem;
+    font-size: 1.3rem;
 }
 
 
@@ -199,7 +199,7 @@ footer {
 header {
     margin-top: 30px;
     height: 110vh;
-    background: linear-gradient($degradenoir3, $degradenoir4), url('../photos/1.PNG');
+    background: linear-gradient($degradenoir3, $degradenoir4), url('../photos/1.jpg');
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -302,18 +302,19 @@ header {
     // }
 
 }
-.button2{
+
+.button2 {
     margin: 20px;
     padding: 15px;
 }
 
 #lien-agenda {
-    background: linear-gradient($degradenoir1, $degradenoir2), url('../images/cornemuse1.jpg');
+    background: linear-gradient($degradenoir1, $degradenoir2), url('../images/cornemuse1b.jpg');
 
 }
 
 #lien-cours {
-    background: linear-gradient($degradenoir1, $degradenoir2), url('../images/partition.jpg');
+    background: linear-gradient($degradenoir1, $degradenoir2), url('../images/partition1.jpg');
 
 }
 
@@ -606,15 +607,16 @@ header {
 #validation {
     min-height: 80vh;
     display: flex;
-    text-align : center;
+    text-align: center;
     align-items: center;
 
-    
+
 }
 
 #img-validation {
-    display : flex;
+    display: flex;
     justify-content: center;
+
     img {
         width: 300px;
     }
